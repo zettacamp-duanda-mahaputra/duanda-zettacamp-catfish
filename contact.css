@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  background-color: black;
+  width: 100%;
+  min-height:50px;
+  align-items: center;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 0 5px 5px #888888;
+}
+
+a {
+  margin-right: 50px;
+  font-size: larger;
+  text-decoration: none;
+  color: white;
+}
+
+.logo{
+  margin-right: 30px;
+}
+
+.content {
+  font-family: 'Lobster', cursive;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  margin: 0;
+ 
+}
+
+main {
+  flex-grow: 1;
+}
+
+.contact {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.grid {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
