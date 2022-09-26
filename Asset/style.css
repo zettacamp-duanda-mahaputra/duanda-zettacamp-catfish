@@ -12,7 +12,6 @@ main {
 body {
   margin: 0;
   background-color: #50ACD7;
-  /* background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/spikes.png); */
   background-image: url(tree_bark.png);
 }
 h1 {
