@@ -1,0 +1,100 @@
+header {
+  background-color: lightblue;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 20px 0 20px 20px;
+  font-family: 'Rubik', sans-serif;
+
+}
+
+.description {
+  margin-top: 40px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile table {
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+.profile th {
+  background-color:#50ACD7;
+}
+
+.profile li {
+  list-style: none;
+}
+
+.profile{
+  width: 500px;
+}
+
+.socmed {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+body {
+  width: 100%;
+  margin: 0;
+  background-color: #50ACD7;
+  background-image: url(../img/tree_bark.png);
+}
+h1 {
+  margin-top: 0;
+}
+a {
+ text-decoration: none;
+ color: black; 
+}
+img { 
+  vertical-align: middle;
+}
+section > p {
+  text-align: justify;
+}
+
+.shop {
+  border-radius: 10px;
+  width: fit-content;
+  overflow: hidden;
+  background-color: #50ACD7;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.shop table{
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+.shop th {
+  background-color: #50ACD7;
+  padding: 10px 70px;
+}
+
+.shop td {
+  background-color: #96D4D4;
+  padding: 40px 70px;
+}
+
+.headline {
+  margin-top: 20px;
+}
