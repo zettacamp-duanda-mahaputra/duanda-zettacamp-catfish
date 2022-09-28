@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Asset/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+  <title>My Form</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="./index.html"> Profile</a></li>
+        <li><a href="./shopping.html">Shopping</a></li>
+        <li><a href="">My Form</a></li>
+      </ul>
+    </nav>
+  </header>
+  <br>
+  <h1>&nbsp;&nbsp;&nbsp;Please Enter Your Identity</h1>
+  <main class="window">
+    <form class="signup" onsubmit="alert('success')">
+      <div class="name">
+        <input class="first-name" type="text" placeholder="First Name">
+        <input class="last-name" type="text" placeholder="Last Name">
+      </div>
+      <textarea class="write">you can tell your story</textarea>
+      <div class="gender">
+        <span>
+          <input type="radio" id="man" name="gender">
+          <label for="man">Man</label>
+        </span>
+        <span>
+          <input type="radio" id="woman" name="gender">
+          <label for="woman">Woman</label>
+        </span>
+        <span>
+          <input type="radio" id="other" name="gender">
+          <label for="other">Other</label>
+        </span>
+      </div>
+      <input class="email" type="email" placeholder="Email">
+      <input class="telephone" type="telephone" placeholder="Phone Number">
+      <div class="option">
+        <input class="age" type="number" placeholder="How old are you">
+        <input class="pass" type="password" placeholder="Password">
+      </div>
+      <input class="link" type="url" placeholder="input your url socmed">
+      <input class="submit" type="submit">
+      <img class="zetta" src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/5edbb7644f7765775e6e903e6ae90ffe.png" alt="me" width="200">
+      
+    </form>
+    <div class="media">
+      <div>
+        <audio class="song" src="./Asset/img/music.mp3" controls width="100%"></audio>
+      </div>
+      <div>
+        <video class="vid" src="https://github.com/zettacamp-duanda-mahaputra/duanda_zettacamp_catfish/blob/main/video.mp4?raw=true" controls></video>
+      </div>
+    </div>
+
+  </main>
+  <br>
+  <br>
+  <footer>
+    <center>
+      <p>Belajar Web Dasar &#169; 2022, Zettacamp at Zettabyte. pte Ltd, UPN Veteran Yogyakarta</p>
+    </center>
+  </footer>
+</body>
+
+</html>

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 header {
   background-color: lightblue;
   box-shadow: 5px 5px 5px #888888;
@@ -20,7 +24,7 @@ header ul {
   margin-top: 40px;
 }
 
-main {
+.content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,4 +101,134 @@ section > p {
 
 .headline {
   margin-top: 20px;
+}
+
+.window {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+
+}
+
+.signup {
+  background-color: #50ACD7;
+  width: 30%;
+  border-radius: 1rem;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  box-shadow: 0 0 20px #000000;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-name {
+  width: calc(50% - 10px);
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.last-name {
+  width: calc(50% - 10px);
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.write {
+  margin-top: 20px;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+  resize: none;
+}
+
+.gender {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.media {
+  width: 65%;
+  background-color: #50ACD7;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0 20px #000000;
+}
+
+.email{
+  margin-top: 20px;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.telephone{
+  margin-top: 20px;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.option{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.link{
+  margin-top: 20px;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.pass {
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.zetta {
+  transform: translate(100px, 60px);
+}
+
+.vid {
+  margin: 20px;
+}
+
+.song {
+  margin: 40px;
+}
+
+.age {
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.submit {
+  margin-top: 20px;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  outline: none;
 }
