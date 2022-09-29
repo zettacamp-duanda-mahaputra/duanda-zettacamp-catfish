@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Asset/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+  <title>Register</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="./index.html"> Profile</a></li>
+        <li><a href="./shopping.html">Shopping</a></li>
+        <li><a href="./form.html">My Form</a></li>
+        <li><a href="">Register</a></li>
+        <li><a href="./table.html">Table</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Daftar Yuk</h1>
+    <form class="form">
+      <div class="wrapper">
+        <div class="section-a">
+          <input class="nama" type="text" name="nama" placeholder="Nama Lengkap">
+          <input class="birth" type="date" name="birth">
+          <div class="picture">
+            <input type="file" name="picture" accept=".jpg" multiple>
+          </div>
+          <input class="tele" type="telephone" name="telephone" placeholder="Telephone">
+          <br>
+          <input class="mail" type="email" name="email" placeholder="Email">
+          <br>
+          <input class="secret" type="password" name="password" placeholder="Password">
+          <br>
+          <textarea class="motiv" name="letter">Write Here</textarea>
+          <div class="person">
+            <span>
+              <input type="radio" id="man" name="gender" value="man">
+              <label for="man">Man</label>
+            </span>
+            <span>
+              <input type="radio" id="woman" name="gender" value="woman">
+              <label for="woman">Woman</label>
+            </span>
+            <span>
+              <input type="radio" id="other" name="gender" value="other">
+              <label for="other">Other</label>
+            </span>
+          </div>
+          <input class="btn" type="submit">
+        </div>
+        <div class="section-b">
+          <div class="profile"></div>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer>
+    <center>
+      <p>Belajar Web Dasar &#169; 2022, Zettacamp at Zettabyte. pte Ltd, UPN Veteran Yogyakarta</p>
+    </center>
+  </footer>
+  <script src="./index.js"></script>
+</body>
+</html>

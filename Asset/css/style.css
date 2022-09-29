@@ -38,14 +38,14 @@ header ul {
 }
 
 .profile th {
-  background-color:#50ACD7;
+  background-color: #50ACD7;
 }
 
 .profile li {
   list-style: none;
 }
 
-.profile{
+.profile {
   width: 500px;
 }
 
@@ -55,23 +55,27 @@ header ul {
   justify-content: space-around;
   margin-bottom: 20px;
 }
+
 body {
   width: 100%;
   margin: 0;
-  background-color: #50ACD7;
-  background-image: url(../img/tree_bark.png);
+  background-color: #687c85;
 }
+
 h1 {
   margin-top: 0;
 }
+
 a {
- text-decoration: none;
- color: black; 
+  text-decoration: none;
+  color: black;
 }
-img { 
+
+img {
   vertical-align: middle;
 }
-section > p {
+
+section>p {
   text-align: justify;
 }
 
@@ -84,7 +88,7 @@ section > p {
   margin-left: auto;
 }
 
-.shop table{
+.shop table {
   border: 1px solid white;
   border-collapse: collapse;
 }
@@ -109,8 +113,6 @@ section > p {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-
-
 }
 
 .signup {
@@ -169,7 +171,7 @@ section > p {
   box-shadow: 0 0 20px #000000;
 }
 
-.email{
+.email {
   margin-top: 20px;
   border-radius: 1rem;
   border: none;
@@ -177,7 +179,7 @@ section > p {
   outline: none;
 }
 
-.telephone{
+.telephone {
   margin-top: 20px;
   border-radius: 1rem;
   border: none;
@@ -185,13 +187,13 @@ section > p {
   outline: none;
 }
 
-.option{
+.option {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.link{
+.link {
   margin-top: 20px;
   border-radius: 1rem;
   border: none;
@@ -232,3 +234,88 @@ section > p {
   padding: 10px;
   outline: none;
 }
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.wrapper input, textarea {
+  border: none;
+}
+
+.section-a,
+.section-b {
+  width: 50%;
+  background-color: white;
+  width: calc(50% - 20px);
+  justify-content: center;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px #000000;
+}
+
+.section-a {
+  padding: 20px;
+}
+
+.section-b {
+  display: flex;
+}
+
+.nama {
+  width: 100%;
+  justify-content: center;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+  padding: 15px;
+  outline: none;
+}
+
+.picture, .tele, .mail, .secret, .motiv, .btn, .birth {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+  padding: 15px;
+  outline: none;
+}
+
+.person {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.motiv {
+  resize: none;
+}
+
+.data {
+  justify-content: center;
+  width: 100vw;
+  overflow: auto;
+  padding: 20px;
+}
+
+.data table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+.data th {
+  background-color: #50ACD7;
+  padding: 10px 70px;
+}
+
+.data td {
+  background-color: #96D4D4;
+  padding: 40px 70px;
+}
+
+.profile img {
+  width: 100px;
+}
+
+
