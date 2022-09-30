@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  text-align: center;
+  
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+nav li {
+  font-family: 'Rubik', sans-serif;
+  margin: 40px 20px 20px 0;
+  font-size: large;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+.icon {
+  margin-right: auto;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  margin-left: 20px;
+}
+
+article {
+  width: 100%;
+  background-color: #000000;
+  width: calc(50% - 20px);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px #000000;
+  margin:0 50px 0 0 ;
+}
+
+.head-card {
+  color: aliceblue;
+  font-size: medium;
+  text-align: center;
+}
+
+.head-card li {
+  font-family: 'Rubik', sans-serif;
+  list-style: none;
+}
+
+p {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1, h3 {
+  font-family: 'Rubik', sans-serif;
+  
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+}
+
+.about {
+  width: 100%;
+  justify-content: center;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px #000000;
+  overflow: hidden;
+}
+
+.socmed {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.socmed img {
+  vertical-align: middle;
+}
+
+.wrapper-regis {
+  display: flex;
+  justify-content: center;
+}
+
+.regis {
+  background-color: #000000;
+  width: 10%;
+  justify-content: center;
+}
+
+.regis a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+}
+
+footer {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}

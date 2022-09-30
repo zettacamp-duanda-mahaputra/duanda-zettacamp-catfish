@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  text-align: center;
+  
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+nav li {
+  font-family: 'Rubik', sans-serif;
+  margin: 40px 20px 20px 0;
+  font-size: large;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+.icon {
+  margin-right: auto;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+body {
+  margin: 0;
+}
+
+.icon h1 {
+  font-family: 'Lobster', cursive;
+}
+
+footer {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+  
+}
+
+footer p {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1, p {
+  font-family: 'Rubik', sans-serif;
+}
+
+th, td, li {
+  font-family: 'Rubik', sans-serif;
+} 
+

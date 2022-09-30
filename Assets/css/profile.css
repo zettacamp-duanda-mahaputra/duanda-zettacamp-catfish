@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  text-align: center;
+  
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+nav li {
+  font-family: 'Rubik', sans-serif;
+  margin: 40px 20px 20px 0;
+  font-size: large;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+.icon {
+  margin-right: auto;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+body {
+  margin: 0;
+  background-image: url(https://w7.pngwing.com/pngs/396/609/png-transparent-naif-musical-ensemble-indonesian-art-guitar-tshirt-music-download-musical-ensemble.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+section {
+  padding-left: 20px;
+}
+
+.cloud {
+  /* background-image: url(../img/cloud.png); */
+  /* background-size: 100%; */
+  /* background-repeat: no-repeat; */
+  margin-top: 20px;
+  width: 20%;
+  background-color: white;
+  font-family: 'Rubik', sans-serif;
+  box-shadow: 10px 10px black;
+  margin-bottom: 200px;
+}
+
+footer {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+p {
+  font-family: 'Rubik', sans-serif;
+}

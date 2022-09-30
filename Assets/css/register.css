@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  
+}
+.letter {
+  font-family: 'Lobster', cursive;
+
+}
+
+.icon {
+  margin-right: auto;
+}
+
+body {
+  margin: 0;
+}
+
+.nama {
+  width: 100%;
+  justify-content: center;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+  padding: 15px;
+  outline: none;
+  border: none;
+}
+
+.picture, .tele, .mail, .secret, .motiv, .birth {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+  padding: 15px;
+  outline: none;
+  border: none;
+}
+
+.person {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.motiv {
+  resize: none;
+}
+
+.form {
+  padding: 40px 100px 40px 100px;
+}
+
+.wrapper-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  margin-top: 40px;
+  background-color: black;
+  width: 10%;
+}
+
+.submit a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+}
+
+footer {
+  width: 100%;
+  margin-top: 25px;
+  text-align: center;
+}
