@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: url(../img/tree_bark.png);
+}
+
+section {
+  display: flex;
+  width: 100%;
+  
+}
+
+.sec1, .sec2 {
+  width: 50%;
+}
+
+
+
+.sec2 span {
+  font-size: 40px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.sec2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sec2-content {
+  margin: 100px 20px 0 45px;
+}
+
+ul {
+  font-size: 20px;
+  list-style: none;
+  font-family: 'Rubik', sans-serif;
+}
+
+.sec2 p {
+  font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+  text-align: justify;
+}
+
+.socmed {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.socmed span {
+  vertical-align: middle;
+}
