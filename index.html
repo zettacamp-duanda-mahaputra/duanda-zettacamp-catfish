@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <title>Project css embeded</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    .table1, .table2, .table3 {
+      border: solid black;
+      margin-top: 40px;
+    }
+
+    .table1 th, .table2 th, .table3 th {
+      padding: 5px;
+      width: 150px;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    .table1 td, .table2 td, .table3 td {
+      padding: 5px;
+      width: 150px;
+      font-family: 'Rubik', sans-serif;
+      text-align: center;
+    }
+
+    .table1 th {
+      background-color: green;
+    }
+
+    .row2 {
+      background-color: red;
+      color: white;
+    }
+    
+    .row3 {
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="table1">
+      <table border="1">
+        <tr>
+          <th>Hobbies</th>
+          <th>Stuff</th>
+          <th>Image</th>
+        </tr>
+        <tr>
+          <td>Football</td>
+          <td>Ball</td>
+          <td>
+            <img src="https://e7.pngegg.com/pngimages/290/102/png-clipart-football-football.png" alt="me" width="50px">
+          </td>
+        </tr>
+        <tr>
+          <td>Music</td>
+          <td>Guitar</td>
+          <td>
+            <img src="https://i.pinimg.com/originals/5c/9f/71/5c9f71b2e196ccf71e72eb88b9f75be8.png" alt="me" width="50px">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="table2">
+      <table border="1">
+        <tr>
+          <th>Movies</th>
+          <th>Year</th>
+          <th>Image</th>
+        </tr>
+        <tr class="row2">
+          <td>Forever My Girl</td>
+          <td>2018</td>
+          <td>
+            <img src="https://m.media-amazon.com/images/M/MV5BMDU0NWU2NTAtYjJhMS00OWUyLThjNDMtYjFjNGY1NzRiOWVjXkEyXkFqcGdeQXVyNDg2MjUxNjM@._V1_.jpg" alt="me" width="50px">
+          </td>
+        </tr>
+        <tr>
+          <td>Imperfect</td>
+          <td>2019</td>
+          <td>
+            <img src="https://m.media-amazon.com/images/M/MV5BNGVlZDcxZjgtZTY4Ny00OGZhLThmMGYtMGIwMmY5M2QwOWIyXkEyXkFqcGdeQXVyNzEzNjU1NDg@._V1_.jpg" alt="me" width="50px">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="table3">
+      <table border="1">
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Image</th>
+        </tr>
+        <tr>
+          <td>Naif</td>
+          <td>Mobil Balap</td>
+          <td>
+            <img src="https://i.ytimg.com/vi/g6PyNeqzrx4/maxresdefault.jpg" alt="me" width="100px">
+          </td>
+        </tr>
+        <tr class="row3">
+          <td>Hivi</td>
+          <td>Mata ke Hati</td>
+          <td>
+            <img src="https://www.lirikanmu.com/pictures/full/full_b2a7df54dbd97e1a835bf9deeba54b38983c4aa2.jpg" alt="me" width="80px">
+          </td>
+        </tr>
+      </table>
+  </main>
+</body>
+</html>
