@@ -31,7 +31,7 @@ section {
 }
 
 .sec2-content {
-  margin: 100px 20px 0 45px;
+  padding: 20px;
 }
 
 ul {
@@ -50,8 +50,17 @@ ul {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
+  font-family: 'Rubik', sans-serif;
 }
 
 .socmed span {
   vertical-align: middle;
+}
+
+.sec2-content .big {
+  font-size: 40px;
+}
+
+.sec2-content .small {
+  font-size: 30px;
 }
