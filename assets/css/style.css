@@ -6,7 +6,17 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 40px;
+  background-color: navy;
+  
+}
+
+.container{
+  width: 100%;
+  border: 10px  solid black;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px salmon;
   background-color: #eaeaea;
   
 }
@@ -37,6 +47,11 @@ body {
   width: 100%;
   border-radius: 3rem;
   box-shadow: 5px 5px 3px #888888;
+  transition: 1s;
+}
+
+.cover img:hover{
+  transform: scale(1.1);
 }
 
 .wrap-card {
@@ -55,6 +70,11 @@ body {
   border-radius: 3rem;
   box-shadow: 5px 5px 3px #888888;
   overflow: hidden;
+  transition: 1s;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .card > p {
@@ -72,4 +92,5 @@ body {
 
 .footer {
   margin: 40px 0 0 0;
+  
 }
