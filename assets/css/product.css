@@ -74,3 +74,11 @@ footer {
   background-color: orange;
   padding: 20px;
 }
+
+img {
+  transition: 1s;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
