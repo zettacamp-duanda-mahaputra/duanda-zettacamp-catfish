@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: darkgray;
+  width: 100%;
+}
+
+header {
+  background-color: black;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+
+.icon {
+  font-family: 'Silkscreen', cursive;
+  color: white;
+  font-size: 30px;
+}
+
+p {
+  margin: 0;
+}
+
+.headline {
+  margin: 20px auto 0 auto;
+  width: 300px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.iphone, .desc {
+  width: calc((100%/2) - 40px);
+}
+
+
+.iphone img {
+  border-radius: 2rem;
+  box-shadow: 5px 5px 10px white;
+}
+
+.video > iframe {
+  border-radius: 2rem;
+}
