@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: lightblue;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+div.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 60px;
+}
+
+.card {
+  width: calc((100%/2) - 40px);
+  background-color: #eaeaea;
+  height: 70vh;
+  padding: 40px;
+  border-radius: 50px;
+  overflow-y: hidden;
+  box-shadow: 5px 5px 20px black;
+}
+
+.desc {
+ padding-left: 50px;
+}
+
+.descs {
+  padding-left: 38px;
+}
+
+.list {
+  overflow: auto;
+  height: 380px;
+  margin-right: 20px;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list li {
+  list-style: none;
+  display: flex;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.list li img {
+  border-radius: 1rem;
+}
+
+footer {
+  background-color: cornflowerblue;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.nav{
+  margin-top: 20px;
+}
+
+.nav li {
+  list-style: none;
+  margin: 0 20px 0 20px;
+  
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav a:hover {
+  border: 1px solid orangered;
+  background-color: orange;
+  padding: 20px;
+}
+
+img {
+  transition: 1s;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
