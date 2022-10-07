@@ -168,10 +168,37 @@ button {
   flex-direction: column;
 }
 
+.input1 > input:valid {
+  background-color: blue;
+}
+
+.input1 > input:invalid {
+  background-color: red;
+}
+
+.input1 > input:focus {
+  background-color: salmon;
+}
+
+
 .input2 {
   display: flex;
   flex-direction: column;
 }
+
+.input2 > input:invalid {
+  background-color: red;
+}
+
+.input2 > input:valid {
+  background-color: blue;
+}
+
+.input2 > input:focus {
+  background-color: salmon;
+}
+
+
 
 .box2 input {
   background-color: green;
@@ -220,4 +247,21 @@ footer a {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper, .wrapper2 {
+    flex-direction: column;
+  }
+  .card, .list {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
+  }
 }
