@@ -69,5 +69,17 @@ a {
 
 }
 
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
+  }
+}
+
 
 
