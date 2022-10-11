@@ -1,17 +1,23 @@
 function purchasingBook(book, discount, tax) {
-  const discountAmount = discount / 100 * book.price
-  const taxAmount = tax / 100 * book.price
-  const {price} = book
-
-  console.log(`Amount of discount: ${discount}%`)
-  console.log(`Price after discount: ${price - discountAmount}`)
-  console.log(`Amount of tax: ${tax}%`)
-  console.log(`Price after tax: ${price - taxAmount}`)
+  const {price, name} = book
+  let {available} = book
+  const discountAmount = discount / 100 * price
+  const taxAmount = tax / 100 * price
+  const priceAfterDiscount = price - discountAmount
+  available = false
+  
+  console.log(`nama buku: ${name}`)
+  console.log(`harga awal: ${price}`)
+  console.log(`${available}`)
+  console.log(`Amount of discount\t: ${discount}%`)
+  console.log(`Price after discount\t: ${priceAfterDiscount}`)
+  console.log(`Amount of tax\t\t: ${tax}%`)
+  console.log(`Price after tax\t\t: ${priceAfterDiscount + taxAmount}`)
 }
 const book = {
   name: "Angular Book",
-  price: 25000,
+  price: 10000,
   available: true
 }
 
-purchasingBook(book, 40, 11)
+purchasingBook(book, 50, 10)
