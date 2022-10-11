@@ -2,6 +2,7 @@ function purchasingBook(book, discount, tax, buy) {
   const {price, stock} = book
   const discountAmount = discount / 100 * price
   const taxAmount = tax / 100 * price
+  let amountPrice = 0
   
  
   console.log("==================================================")
@@ -12,6 +13,9 @@ function purchasingBook(book, discount, tax, buy) {
   console.log("==================================================")
   
   for(let i = 1; i < buy;i++) {
+  amountPrice += price
+  console.log(`Amount price: ${amountPrice}`)
+  
     if(i > stock) {
       console.log('You cannot purchase again')
       break;
@@ -20,6 +24,8 @@ function purchasingBook(book, discount, tax, buy) {
       console.log('you can purchase again')
   }
 }
+console.log(`you must pay: Rp ${amountPrice.toLocaleString("id")}`)
+console.log(`Sisa Stock: ${stock - buy}`)
 console.log("==================================================")
 }
 
