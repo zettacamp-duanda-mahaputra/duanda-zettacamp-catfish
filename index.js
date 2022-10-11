@@ -9,13 +9,13 @@ function purchasingBook(book, discount, tax, buy) {
   console.log(`Amount of discount: ${discount}%`)
   console.log(`Price after discount: ${price - discountAmount}`)
   console.log(`Amount of tax: ${tax}%`)
-  console.log(`Price after tax: ${price - taxAmount}`)
+  console.log(`Price after tax: ${price + taxAmount}`)
   console.log("==================================================")
   
   for(let i = 1; i < buy;i++) {
   amountPrice += price
   console.log(`Amount price: ${amountPrice}`)
-  
+
     if(i > stock) {
       console.log('You cannot purchase again')
       break;
