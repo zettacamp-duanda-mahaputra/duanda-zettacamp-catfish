@@ -12,7 +12,8 @@ function purchasingBook(book, discount, tax) {
 }
 const book = {
   name: "Angular Book",
-  price: 25000
+  price: 25000,
+  available: true
 }
 
 purchasingBook(book, 40, 11)
