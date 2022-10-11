@@ -3,16 +3,18 @@ function purchasingBook(book, discount, tax, buy) {
   const discountAmount = discount / 100 * price
   const taxAmount = tax / 100 * price
   let amountPrice = 0
+  const priceAfterDiscount = price -discountAmount
   
  
   console.log("==================================================")
   console.log(`Amount of discount: ${discount}%`)
-  console.log(`Price after discount: ${price - discountAmount}`)
+  console.log(`Price after discount: ${priceAfterDiscount}`)
   console.log(`Amount of tax: ${tax}%`)
-  console.log(`Price after tax: ${price + taxAmount}`)
+  console.log(`Price after tax: ${priceAfterDiscount + taxAmount}`)
   console.log("==================================================")
   
-  for(let i = 1; i < buy;i++) {
+  let i = 1
+  for(i=1; i <= buy;i++) {
   amountPrice += price
   console.log(`Amount price: ${amountPrice}`)
 
@@ -25,7 +27,7 @@ function purchasingBook(book, discount, tax, buy) {
   }
 }
 console.log(`you must pay: Rp ${amountPrice.toLocaleString("id")}`)
-console.log(`Sisa Stock: ${stock - buy}`)
+console.log(`Sisa Stock: ${stock - (i - 1)}`)
 console.log("==================================================")
 }
 
@@ -37,4 +39,4 @@ const book = {
 }
 
 
-purchasingBook(book, 40, 11, 8)
+purchasingBook(book, 40, 11, 6)
