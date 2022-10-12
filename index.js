@@ -29,18 +29,27 @@ function purchasingBook(book, discount, tax, buy, credit) {
   console.log("==================================================");
 
   //rumus cicilan
-  let installment = amountPrice / credit;
+  let installment = parseFloat((amountPrice / credit).toFixed(2));
   //array kosong buat ngepush hasil looping
   let termOfCredit = [];
   //var kosong untuk wadah looping cicilan
   let totalCredit = 0;
+  
 
   for (let i = 1; i <= credit; i++) {
     totalCredit += installment;
+
+    if(i==credit){
+      const selisih = price - totalCredit
+      installment += selisih
+      totalCredit += selisih
+    }
+
+    
     termOfCredit.push({
       month: i,
-      cicilan: installment,
-      total: totalCredit
+      cicilan: installment.toFixed(2),
+      total: totalCredit.toFixed(2)
     });
   }
 
@@ -51,9 +60,9 @@ function purchasingBook(book, discount, tax, buy, credit) {
 
 const book = {
   name: "Angular",
-  price: 25000,
-  stock: 5,
+  price: 6000,
+  stock: 1,
   available: true,
 };
 
-purchasingBook(book, 40, 11, 6, 6);
+purchasingBook(book, 0, 0, 1, 7);
