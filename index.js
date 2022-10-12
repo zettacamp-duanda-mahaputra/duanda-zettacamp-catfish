@@ -28,10 +28,10 @@ function purchasingBook(book, discount, tax, buy, credit) {
   console.log(`Sisa Stock: ${stock - (i - 1)}`);
   console.log("==================================================");
 
-  //array kosong buat ngepush hasil looping
-  let termOfCredit = [];
   //rumus cicilan
   let installment = amountPrice / credit;
+  //array kosong buat ngepush hasil looping
+  let termOfCredit = [];
   //var kosong untuk wadah looping cicilan
   let totalCredit = 0;
 
