@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="card" (click)="onClick()" [ngClass]="active? 'active' : ''">
+    <img [src]="items.img" alt="me">
+    <h1>{{items.title}}</h1>
+    <p>{{items.des}}</p>
+    <button>{{active}}</button>
+  </div>   
+</div>
+
+
