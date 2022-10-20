@@ -1,0 +1,9 @@
+<div class="container">
+  <app-card *ngFor="let item of list" [items]="item"></app-card>
+</div>
+<div>
+  <app-output (newItemEvent)="addItem($event)"></app-output>
+</div>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
