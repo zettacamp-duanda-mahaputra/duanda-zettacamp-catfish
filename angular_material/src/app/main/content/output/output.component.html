@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="box">
+    <h1>Please Add Something</h1>
+    <div class="input">
+      <label for="item-input">Add a car:</label>
+      <input type="text" id="item-input" #newItem />
+    </div>
+    <div class="input">
+      <label for="item-input">Add Price:</label>
+      <input type="text" id="item-input" #priceInput />
+    </div>
+    <button type="button" (click)="addNewItem(newItem.value)">{{bttn}}</button>
+  </div>
+</div>

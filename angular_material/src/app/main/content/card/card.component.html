@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="card"[ngClass]="active? 'active': ''">
+    <img [src]="items.img" alt="me">
+    <h1>{{items.title}}</h1>
+    <p>{{active? "SOLD OUT":items.des}}</p>
+    <button (click)="onClick()">BUY</button>
+  </div>
+</div>
