@@ -21,7 +21,10 @@ export class CardComponent implements OnInit {
   }
 
   onClick(){
-    this.Likes.emit(this.index)
+    this.Likes.emit({
+      index: this.index,
+      liked: !this.LISTED.liked
+    })
     console.log(this.index);
     
   }

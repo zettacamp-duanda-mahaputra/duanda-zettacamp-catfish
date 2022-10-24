@@ -18,15 +18,16 @@ export class ContentComponent implements OnInit {
   LIST:any = []
 
   ngOnInit(){
-    this.LIST = this.dataService.LIST
-    console.log(this.LIST)
+     this.dataService.list.subscribe(data=>{
+      this.LIST = data
+      console.log(this.LIST)
+    })
   }
 
-  onClick(index:any): void {
-    const data = this.LIST[index];
-          data.liked = !data.liked;
+  onClick(data:any): void {
+    console.log(data);
     
-    this.LIST[index] = this.dataService.updateData(index,data);
+    this.dataService.updateLike(data.index, data.liked)
   }
 
 }
