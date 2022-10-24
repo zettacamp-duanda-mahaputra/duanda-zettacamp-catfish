@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ LISTED.title }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="LISTED.img" alt="me" />
+  <mat-card-content>
+    <p>
+      {{ LISTED.desc }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="icon">
+    <button mat-icon-button (click)="onClick()">
+      <mat-icon [fontIcon]="LISTED.liked?'favorite':'favorite_border'"></mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon fontIcon="share"></mat-icon>
+    </button>
+    
+  </mat-card-actions>
+</mat-card>

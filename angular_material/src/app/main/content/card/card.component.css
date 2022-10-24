@@ -1,0 +1,14 @@
+.example-card {
+  max-width: 400px;
+  height: 100%;
+}
+
+.icon mat-icon{
+  margin-right: 10px;
+}
+
+
+button.favorite{
+  background-color: black;
+  
+}

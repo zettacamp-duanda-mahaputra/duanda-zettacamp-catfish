@@ -1,0 +1,8 @@
+<div class="container">
+  <app-card 
+  *ngFor="let LISTS of LIST;let i = index"
+  [index]="i" 
+  [LISTED]="LISTS"
+  (Likes)="onClick($event)"
+  ></app-card>
+</div>
