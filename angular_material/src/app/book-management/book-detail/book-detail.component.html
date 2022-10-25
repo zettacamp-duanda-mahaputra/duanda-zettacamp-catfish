@@ -1,0 +1,15 @@
+<div class="select" *ngIf="selectedBook else blocked">
+  <img [src]="selectedBook.img" alt="">
+  <h3>{{selectedBook.name}}</h3>
+  <p>Author: <em>{{selectedBook.author}}</em></p>
+  <p>Publisher: <em>{{selectedBook.publisher}}</em></p>
+  <p>Publish Date: <em>{{selectedBook.publish_date}}</em></p>
+</div>
+
+<ng-template #blocked class="block">
+  <img src="https://cdn-icons-png.flaticon.com/512/2748/2748558.png" alt="me">
+  <h3>You dont have any selected book yet, Please select from list of book that available</h3>
+</ng-template>
+
+
+
