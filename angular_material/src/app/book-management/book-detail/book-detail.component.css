@@ -1,0 +1,15 @@
+.select img {
+  width: 200px;
+  height: 300px;
+}
+
+.select, .block{
+  margin: auto;
+}
+
+.back a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+

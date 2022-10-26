@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "Angular Book",
+    "author": "Duanda Mahaputra",
+    "publisher": "Omah Lor",
+    "publish_date":"14 Juli 2022",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg"
+  },
+  {
+    "id": 1,
+    "name": "Typescript Book",
+    "author": "Choirul Annam",
+    "publisher": "Pasar Telo",
+    "publish_date":"12 Desember 2019",
+    "img": "https://w7.pngwing.com/pngs/915/519/png-transparent-typescript-hd-logo-thumbnail.png"
+  },
+  {
+    "id": 2,
+    "name": "Javascript Book",
+    "author": "Stefanus Kevin",
+    "publisher": "Zetta",
+    "publish_date":"22 November 2015",
+    "img":"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+  }
+]

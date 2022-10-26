@@ -1,0 +1,15 @@
+.card { 
+  background-color: #eaeaea;
+  box-shadow: 5px 5px 10px black;
+  width: 90%;
+  margin-left: 50px;
+}
+
+.btn a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
+
+
