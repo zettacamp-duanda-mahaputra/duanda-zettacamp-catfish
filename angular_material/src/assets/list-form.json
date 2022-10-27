@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "name": "Duanda",
+    "age": 25,
+    "gender": "Man",
+    "email": "duanda.mahaputra@zettacamp.pro",
+    "position": "Frontend",
+    "martialstatus": "Single",
+    "addresses": {
+      "address": "Monjali",
+      "zipcode": 55581,
+      "city": "Sleman",
+      "country": "Indonesia"
+    }
+  }
+]

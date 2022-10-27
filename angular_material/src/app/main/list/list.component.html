@@ -1,0 +1,6 @@
+<div class="btn">
+  <button routerLink="/form" mat-button color="warn">add new user</button>
+</div>
+<div class="card">
+  <app-card *ngFor="let item of List" [items]="item"></app-card>
+</div>
