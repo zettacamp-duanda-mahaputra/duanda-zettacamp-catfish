@@ -37,5 +37,13 @@ export class DataService {
     return this.list.getValue();
   }
 
+  updateUser(user: any) {
+    const items = this.list.getValue().map(u => {
+          return (u.id === user.id) ? user : u;
+    });
+
+    this.list.next(items);
+}
+
 
 }

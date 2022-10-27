@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
+import { ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs';
+// import { Location } from '@angular/common'; 
+
+
 
 @Component({
   selector: 'app-form',
@@ -14,7 +19,7 @@ export class FormComponent implements OnInit {
     city: new FormControl(null),
     country: new FormControl(null),
   });
-  myForm:any = new FormGroup({
+  myForm: any = new FormGroup({
     id: new FormControl(null),
     name: new FormControl(null),
     age: new FormControl(null),
@@ -22,13 +27,42 @@ export class FormComponent implements OnInit {
     email: new FormControl(null),
     position: new FormControl(null),
     martialstatus: new FormControl(null),
-    addresses: this.myAddresses
+    addresses: this.myAddresses,
   });
-  constructor(private dataService:DataService) {}
 
-  ngOnInit(): void {}
+  isEdit: boolean = false;
 
-  onSubmit(){
-    this.dataService.addUserToList(this.myForm.value)
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute,
+    // private location:Location
+  ) {}
+
+  ngOnInit() {
+    const id = this.route.snapshot.queryParamMap.get('userId');
+    this.isEdit = id != null;
+    console.log(id);
+
+    if (this.isEdit) {
+      this.dataService.list
+        .pipe(first((items) => items.length !== 0))
+        .subscribe((items) => {
+          const item = items.find((items) => items.id === id);
+          this.setFormValues(item);
+        });
+    }
+  }
+
+  setFormValues(user: any) {
+    this.myForm.setValue(user);
+  }
+
+  onSubmit() {
+    if(this.isEdit){
+      this.dataService.updateUser(this.myForm.value)
+    }else{
+      this.dataService.addUserToList(this.myForm.value);
+    }
+    // this.location.back()
   }
 }
