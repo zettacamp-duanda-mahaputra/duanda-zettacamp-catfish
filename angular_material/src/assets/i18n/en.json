@@ -4,12 +4,16 @@
     "name": "name",
     "age": "age",
     "gender": "gender",
+    "man": "Man",
+    "woman": "Woman",
     "email": "email",
     "position": "position",
     "martialstatus": "martialstatus",
     "address": "address",
     "zipcode": "zipcode",
     "city": "city",
-    "country": "country"
+    "country": "country",
+    "single": "Single",
+    "married":"Married"
   }
 }

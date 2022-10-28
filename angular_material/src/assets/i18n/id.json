@@ -4,12 +4,16 @@
     "name": "nama",
     "age": "umur",
     "gender": "jeniskelamin",
+    "man": "Pria",
+    "woman": "Wanita",
     "email": "surel",
     "position": "posisi",
     "martialstatus": "status",
     "address": "alamat",
     "zipcode": "kodepos",
     "city": "kota",
-    "country": "negara"
+    "country": "negara",
+    "Single": "Lajang",
+    "Married":"Menikah"
   }
 }

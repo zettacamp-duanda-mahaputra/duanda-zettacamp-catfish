@@ -30,7 +30,7 @@ export class FormComponent implements OnInit {
 
   isEdit: boolean = false;
 
-  selectedLang = 'en';
+  selectedLang:any = null;
 
   get addressForms (){
     return this.myForm.get('addresses') as FormArray
@@ -96,6 +96,7 @@ export class FormComponent implements OnInit {
   }
 
   setLanguage(lang: string) {
+    this.selectedLang = lang
     this.translateService.use(lang);
   }
 
