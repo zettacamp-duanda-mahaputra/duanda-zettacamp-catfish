@@ -1,0 +1,15 @@
+{
+  "myForm": {
+    "id": "nomor",
+    "name": "nama",
+    "age": "umur",
+    "gender": "jeniskelamin",
+    "email": "surel",
+    "position": "posisi",
+    "martialstatus": "status",
+    "address": "alamat",
+    "zipcode": "kodepos",
+    "city": "kota",
+    "country": "negara"
+  }
+}

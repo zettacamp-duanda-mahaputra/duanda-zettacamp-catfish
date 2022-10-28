@@ -1,16 +1,30 @@
+<div class="language">
+  <mat-form-field appearance="outline">
+    <mat-label>Language</mat-label>
+    <mat-select
+      [(value)]="selectedLang"
+      #lang
+      (valueChange)="setLanguage(lang.value)"
+    >
+      <mat-option value="en">English</mat-option>
+      <mat-option value="id">Indonesian</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill">
-    <mat-label>ID</mat-label>
+    <mat-label>{{"myForm.id" | translate}}</mat-label>
     <input matInput formControlName="id" />
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
+    <mat-label>{{"myForm.name" | translate}}</mat-label>
     <input matInput formControlName="name" />
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Age</mat-label>
+    <mat-label>{{"myForm.age" | translate}}</mat-label>
     <input matInput type="number"  formControlName="age" />
   </mat-form-field>
 
@@ -20,12 +34,12 @@
   </mat-radio-group>
 
   <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
+    <mat-label>{{"myForm.email" | translate}}</mat-label>
     <input matInput type="email" formControlName="email" />
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Position</mat-label>
+    <mat-label>{{"myForm.position" | translate}}</mat-label>
     <mat-select formControlName="position">
       <mat-option value="FE">Frontend</mat-option>
       <mat-option value="BE">Backend</mat-option>
@@ -34,7 +48,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Martial Status</mat-label>
+    <mat-label>{{"myForm.martialstatus" | translate}}</mat-label>
     <mat-select formControlName="martialstatus">
       <mat-option value="single">Single</mat-option>
       <mat-option value="married">Married</mat-option>
@@ -42,22 +56,22 @@
   </mat-form-field>
   <form [formGroup]="myAddresses">
     <mat-form-field appearance="fill">
-      <mat-label>Address</mat-label>
+      <mat-label>{{"myForm.address" | translate}}</mat-label>
       <input matInput formControlName="address" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Zip Code</mat-label>
+      <mat-label>{{"myForm.zipcode" | translate}}</mat-label>
       <input matInput type="number" formControlName="zipcode" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>City</mat-label>
+      <mat-label>{{"myForm.city" | translate}}</mat-label>
       <input matInput formControlName="city" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Country</mat-label>
+      <mat-label>{{"myForm.country" | translate}}</mat-label>
       <input matInput formControlName="country" />
     </mat-form-field>
   </form>

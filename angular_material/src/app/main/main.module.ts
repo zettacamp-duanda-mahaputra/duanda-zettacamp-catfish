@@ -7,8 +7,13 @@ import { ListComponent } from './list/list.component';
 import { MaterialAngularModule } from '../material-angular/material-angular.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {HttpClient} from '@angular/common/http'
 
-
+export function HttpLoaderFactory(httpClient:HttpClient){
+  return new TranslateHttpLoader(httpClient)
+}
 
 
 @NgModule({
@@ -22,7 +27,15 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     MaterialAngularModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     FormComponent,

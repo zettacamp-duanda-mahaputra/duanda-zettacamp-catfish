@@ -3,7 +3,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs';
-// import { Location } from '@angular/common'; 
+import { Location } from '@angular/common'; 
+import { TranslateService } from '@ngx-translate/core';
 
 
 
@@ -32,10 +33,15 @@ export class FormComponent implements OnInit {
 
   isEdit: boolean = false;
 
+  selectedLang = 'en';
+
+
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    // private location:Location
+    private location:Location,
+    public translateService: TranslateService
+
   ) {}
 
   ngOnInit() {
@@ -63,6 +69,10 @@ export class FormComponent implements OnInit {
     }else{
       this.dataService.addUserToList(this.myForm.value);
     }
-    // this.location.back()
+    this.location.back()
+  }
+
+  setLanguage(lang: string) {
+    this.translateService.use(lang);
   }
 }
