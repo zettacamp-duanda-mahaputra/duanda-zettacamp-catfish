@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl,FormArray, Validators } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs';
 import { Location } from '@angular/common'; 
 import { TranslateService } from '@ngx-translate/core';
+
 
 
 
@@ -14,13 +15,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  myAddresses = new FormGroup({
-    address: new FormControl(null),
-    zipcode: new FormControl(null),
-    city: new FormControl(null),
-    country: new FormControl(null),
-  });
-  myForm: any = new FormGroup({
+
+  
+  myForm:any = new FormGroup({
     id: new FormControl(null),
     name: new FormControl(null),
     age: new FormControl(null),
@@ -28,12 +25,16 @@ export class FormComponent implements OnInit {
     email: new FormControl(null),
     position: new FormControl(null),
     martialstatus: new FormControl(null),
-    addresses: this.myAddresses,
+    addresses: new FormArray([])
   });
 
   isEdit: boolean = false;
 
   selectedLang = 'en';
+
+  get addressForms (){
+    return this.myForm.get('addresses') as FormArray
+  }
 
 
   constructor(
@@ -53,10 +54,32 @@ export class FormComponent implements OnInit {
       this.dataService.list
         .pipe(first((items) => items.length !== 0))
         .subscribe((items) => {
-          const item = items.find((items) => items.id === id);
-          this.setFormValues(item);
+          const item:any = items.find((items) => items.id === id);
+          console.log(item);
+          
+
+          for(let i = 0; i < item.addresses.length;i++){
+            this.pushForm()
+          }
+          this.myForm.patchValue(item);
         });
+
+    
+
+    } 
+    else{
+      this.pushForm()
     }
+
+  }
+
+  pushForm(){
+    this.addressForms.push(new FormGroup({
+      address: new FormControl(null),
+      zipcode: new FormControl(null),
+      city: new FormControl(null),
+      country: new FormControl(null)
+    }))
   }
 
   setFormValues(user: any) {
@@ -75,4 +98,9 @@ export class FormComponent implements OnInit {
   setLanguage(lang: string) {
     this.translateService.use(lang);
   }
+
+  removeForm(index:number){
+    this.addressForms.removeAt(index)
+  }
+
 }

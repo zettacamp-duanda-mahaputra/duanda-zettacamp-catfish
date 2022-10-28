@@ -7,11 +7,13 @@
     "email": "duanda.mahaputra@zettacamp.pro",
     "position": "Frontend",
     "martialstatus": "Single",
-    "addresses": {
+    "addresses":[ 
+    {
       "address": "Monjali",
       "zipcode": 55581,
       "city": "Sleman",
       "country": "Indonesia"
     }
+  ]
   }
 ]
