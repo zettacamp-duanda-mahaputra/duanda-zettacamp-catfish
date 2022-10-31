@@ -102,10 +102,10 @@
           <mat-form-field class="input" appearance="fill">
             <mat-label>{{ "myForm.zipcode" | translate }}</mat-label>
             <input matInput formControlName="zipcode" />
-            <mat-error *ngIf="myForm.get('zipcode')?.errors?.['required']"
+            <mat-error *ngIf="myAddr.get('zipcode')?.errors?.['required']"
               >fields not filled</mat-error
             >
-            <mat-error *ngIf="myForm.get('zipcode')?.errors?.['pattern']"
+            <mat-error *ngIf="myAddr.get('zipcode')?.errors?.['pattern']"
               >must be number</mat-error
             >
           </mat-form-field>

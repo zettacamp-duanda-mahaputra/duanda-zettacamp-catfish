@@ -18,6 +18,20 @@ import Swal from 'sweetalert2';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
+
+  myAddr:any = new FormGroup({
+    address: new FormControl(null),
+    zipcode: new FormControl(null, [
+      Validators.required,
+      Validators.pattern('[0-9]*'),
+      Validators.minLength(5),
+      Validators.maxLength(5),
+    ]),
+    city: new FormControl(null),
+    country: new FormControl(null),
+  })
+
+
   myForm: any = new FormGroup({
     id: new FormControl(null, Validators.required),
     name: new FormControl(null, Validators.required),
@@ -86,19 +100,8 @@ export class FormComponent implements OnInit {
   }
 
   pushForm() {
-    this.addressForms.push(
-      new FormGroup({
-        address: new FormControl(null),
-        zipcode: new FormControl(null, [
-          Validators.required,
-          Validators.pattern('[0-9]*'),
-          Validators.minLength(5),
-          Validators.maxLength(5),
-        ]),
-        city: new FormControl(null),
-        country: new FormControl(null),
-      })
-    );
+    this.addressForms.push(this.myAddr)
+      
   }
 
   setFormValues(user: any) {
