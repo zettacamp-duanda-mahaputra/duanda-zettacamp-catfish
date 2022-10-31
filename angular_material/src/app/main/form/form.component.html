@@ -18,30 +18,41 @@
       <mat-label>{{ "myForm.id" | translate }}</mat-label>
       <input matInput formControlName="id" />
     </mat-form-field>
+    <span class="valid-name" *ngIf="myForm.get('id').invalid">fields not filled</span>
+
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.name" | translate }}</mat-label>
       <input matInput formControlName="name" />
     </mat-form-field>
+    <span class="valid-name" *ngIf="myForm.get('name').invalid">fields not filled</span>
+
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.age" | translate }}</mat-label>
       <input matInput type="number" formControlName="age" />
     </mat-form-field>
+    <span class="valid-name" *ngIf="myForm.get('age').invalid">Age not required</span>
 
     <mat-radio-group
       class="radio"
       aria-label="Select an option"
       formControlName="gender"
     >
-      <mat-radio-button value="Man">{{"myForm.man" | translate}}</mat-radio-button>
-      <mat-radio-button value="Woman">{{"myForm.woman" | translate}}</mat-radio-button>
+      <mat-radio-button value="Man">{{
+        "myForm.man" | translate
+      }}</mat-radio-button>
+      <mat-radio-button value="Woman">{{
+        "myForm.woman" | translate
+      }}</mat-radio-button>
     </mat-radio-group>
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.email" | translate }}</mat-label>
-      <input matInput type="email" formControlName="email" />
+      <input matInput placeholder="pat@example.com" type="email" formControlName="email" required/>
+      <mat-error *ngIf="this.myForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
+    
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.position" | translate }}</mat-label>
@@ -63,28 +74,34 @@
     <div formArrayName="addresses">
       <div *ngFor="let address of addressForms.controls; let i = index">
         <div [formGroupName]="i">
-          <h3>Address{{i + 1}}</h3>
+          <h3>Address{{ i + 1 }}</h3>
 
           <mat-form-field class="input" appearance="fill">
             <mat-label>{{ "myForm.address" | translate }}</mat-label>
             <input matInput formControlName="address" />
           </mat-form-field>
-  
+
           <mat-form-field class="input" appearance="fill">
             <mat-label>{{ "myForm.zipcode" | translate }}</mat-label>
             <input matInput type="number" formControlName="zipcode" />
           </mat-form-field>
-  
+
           <mat-form-field class="input" appearance="fill">
             <mat-label>{{ "myForm.city" | translate }}</mat-label>
             <input matInput formControlName="city" />
           </mat-form-field>
-  
+
           <mat-form-field class="input" appearance="fill">
             <mat-label>{{ "myForm.country" | translate }}</mat-label>
             <input matInput formControlName="country" />
           </mat-form-field>
-          <button type="button" mat-button (click)="removeForm(i)" *ngIf="addressForms.length > 1">Delete
+          <button
+            type="button"
+            mat-button
+            (click)="removeForm(i)"
+            *ngIf="addressForms.length > 1"
+          >
+            Delete
           </button>
         </div>
       </div>
