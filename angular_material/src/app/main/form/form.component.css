@@ -28,3 +28,16 @@
 .wrap {
   padding: 80px;
 }
+
+.valid-name{
+  color: red;
+  display: block;
+  margin: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* mat-from-field{
+  padding-bottom: 0;
+} */
