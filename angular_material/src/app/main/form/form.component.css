@@ -29,8 +29,7 @@
   padding: 80px;
 }
 
-.valid-name{
-  color: red;
+.error{
   display: block;
   margin: 10px;
   width: 50%;
@@ -38,6 +37,3 @@
   margin-right: auto;
 }
 
-/* mat-from-field{
-  padding-bottom: 0;
-} */

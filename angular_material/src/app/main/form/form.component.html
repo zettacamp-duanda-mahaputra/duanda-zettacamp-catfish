@@ -18,21 +18,32 @@
       <mat-label>{{ "myForm.id" | translate }}</mat-label>
       <input matInput formControlName="id" />
     </mat-form-field>
-    <span class="valid-name" *ngIf="myForm.get('id').invalid">fields not filled</span>
-
+    <mat-error
+      class="error"
+      *ngIf="this.myForm.get('id').invalid && this.myForm.get('id').touched"
+      >fields not filled</mat-error
+    >
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.name" | translate }}</mat-label>
       <input matInput formControlName="name" />
     </mat-form-field>
-    <span class="valid-name" *ngIf="myForm.get('name').invalid">fields not filled</span>
-
+    <mat-error
+      class="error"
+      *ngIf="this.myForm.get('name').invalid && this.myForm.get('name').touched"
+      >fields not filled</mat-error
+    >
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.age" | translate }}</mat-label>
       <input matInput type="number" formControlName="age" />
+      <mat-error *ngIf="myForm.get('age')?.errors?.['required']"
+        >fields not filled</mat-error
+      >
+      <mat-error *ngIf="myForm.get('age')?.errors?.['min']"
+        >minimum age not required</mat-error
+      >
     </mat-form-field>
-    <span class="valid-name" *ngIf="myForm.get('age').invalid">Age not required</span>
 
     <mat-radio-group
       class="radio"
@@ -49,10 +60,17 @@
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.email" | translate }}</mat-label>
-      <input matInput placeholder="pat@example.com" type="email" formControlName="email" required/>
-      <mat-error *ngIf="this.myForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+      <input
+        matInput
+        placeholder="pat@example.com"
+        type="email"
+        formControlName="email"
+        required
+      />
+      <mat-error *ngIf="this.myForm.get('email').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
-    
 
     <mat-form-field class="input" appearance="fill">
       <mat-label>{{ "myForm.position" | translate }}</mat-label>
@@ -83,7 +101,13 @@
 
           <mat-form-field class="input" appearance="fill">
             <mat-label>{{ "myForm.zipcode" | translate }}</mat-label>
-            <input matInput type="number" formControlName="zipcode" />
+            <input matInput formControlName="zipcode" />
+            <mat-error *ngIf="myForm.get('zipcode')?.errors?.['required']"
+              >fields not filled</mat-error
+            >
+            <mat-error *ngIf="myForm.get('zipcode')?.errors?.['pattern']"
+              >must be number</mat-error
+            >
           </mat-form-field>
 
           <mat-form-field class="input" appearance="fill">
