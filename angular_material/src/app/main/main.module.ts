@@ -9,7 +9,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { AccentPipe } from './pipes/accent.pipe';
+import { CombinePipe } from './pipes/combine.pipe';
+
+
 
 export function HttpLoaderFactory(httpClient:HttpClient){
   return new TranslateHttpLoader(httpClient)
@@ -21,7 +27,10 @@ export function HttpLoaderFactory(httpClient:HttpClient){
     FormComponent,
     CardComponent,
     MainComponent,
-    ListComponent
+    ListComponent,
+    FilterPipe,
+    AccentPipe,
+    CombinePipe,
   ],
   imports: [
     CommonModule,
@@ -35,7 +44,8 @@ export function HttpLoaderFactory(httpClient:HttpClient){
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule
   ],
   exports: [
     FormComponent,

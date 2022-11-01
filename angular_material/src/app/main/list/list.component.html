@@ -1,6 +1,15 @@
+<mat-form-field class="wrap" appearance="fill" floatLabel="never">
+    <mat-icon matPrefix>search</mat-icon>
+  <mat-label for="filter">Search</mat-label>
+  <input matInput type="text" id="filter" [(ngModel)]="filterBy"/>
+</mat-form-field>
+<button mat-icon-button matSuffix *ngIf="filterBy" (click)="filterBy=''">
+  <mat-icon>close</mat-icon>
+</button>
+
 <div class="btn">
   <button routerLink="/form" mat-button color="warn">add new user</button>
 </div>
 <div class="card">
-  <app-card *ngFor="let item of List" [items]="item"></app-card>
+  <app-card *ngFor="let item of List | filter: filterBy" [items]="item"></app-card>
 </div>

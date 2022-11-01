@@ -9,6 +9,7 @@ import { User } from '../user-interface/user';
 })
 export class ListComponent implements OnInit {
   List:User[] = []
+  filterBy:string = "";
 
   constructor(private dataService: DataService) { }
 
@@ -17,6 +18,8 @@ export class ListComponent implements OnInit {
       this.List = data;
       console.log(this.List);
     });
+
+    
   }
 
   

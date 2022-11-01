@@ -2,11 +2,10 @@
   <mat-card-title>{{items.name}}</mat-card-title>
   <mat-card-content>
     <p>Age: {{items.age}}</p>
-    <p>Gender: {{items.gender}}</p>
-    <p>Position: {{items.position}}</p>
+    <p>Gender: {{items.gender | uppercase}}</p>
+    <p>Position: {{items.position | lowercase}}</p>
   </mat-card-content>
   <mat-card-actions>
-    <!-- <a mat-button routerLink="/form">EDIT</a> -->
     <button mat-button (click)="onEdit()">Edit</button>
   </mat-card-actions>
 </mat-card>

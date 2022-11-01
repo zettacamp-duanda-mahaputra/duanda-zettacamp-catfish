@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "Duanda",
+    "name": "Duanda Mahaputra",
     "age": 25,
     "gender": "Man",
     "email": "duanda.mahaputra@zettacamp.pro",
@@ -13,7 +13,23 @@
       "zipcode": 55581,
       "city": "Sleman",
       "country": "Indonesia"
+    }]
+  },
+    {
+      "id": "1",
+      "name": "Chòirúl Annam",
+      "age": 20,
+      "gender": "Man",
+      "email": "choirul@zettacamp.pro",
+      "position": "Frontend",
+      "martialstatus": "Single",
+      "addresses":[ 
+      {
+        "address": "Pasar Telo",
+        "zipcode": 55581,
+        "city": "Bantul",
+        "country": "Indonesia"
+      }]
     }
-  ]
-  }
+
 ]
