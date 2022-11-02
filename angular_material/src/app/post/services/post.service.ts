@@ -35,5 +35,11 @@ export class PostService {
     );
   }
 
+  deletePost(id: number){
+    const url = this.API_URL + 'posts/' + id;
+    return this.httpClient.delete<any>(url);
+    
+}
+
   
 }

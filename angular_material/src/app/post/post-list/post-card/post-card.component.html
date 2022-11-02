@@ -6,5 +6,6 @@
   <mat-divider inset></mat-divider>
   <mat-card-actions>
     <a mat-button routerLink="/detail" [queryParams]="{ id: items.id }">Edit</a>
+    <button mat-button (click)="onClick()">Delete</button>
   </mat-card-actions>
 </mat-card>

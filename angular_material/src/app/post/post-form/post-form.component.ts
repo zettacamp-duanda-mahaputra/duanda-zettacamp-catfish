@@ -44,24 +44,26 @@ export class PostFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.postForm)
-    if (!this.isEdit) {
+    if (this.isEdit) {
       if (this.postForm.valid) {
-        this.postService.patchPost(this.id,this.postForm.value);
-        Swal.fire({
-          title: 'Success!',
-          text: 'Data Updated!',
-          icon: 'success',
-          didClose: () => this.goBack()
-        });
+        this.postService.patchPost(this.id,this.postForm.value).subscribe(() => {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Data Updated!',
+            icon: 'success',
+            didClose: () => this.goBack()
+          });
+        })
       } 
     } else {
       if (this.postForm.valid) {
-        this.postService.addPost(this.postForm.value);
-        Swal.fire({
-          title: 'Success!',
-          text: 'Data Updated!',
-          icon: 'success',
-          didClose: () => this.goBack()
+        this.postService.addPost(this.postForm.value).subscribe(() => {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Data Updated!',
+            icon: 'success',
+            didClose: () => this.goBack()
+          });
         });
       } 
     }
