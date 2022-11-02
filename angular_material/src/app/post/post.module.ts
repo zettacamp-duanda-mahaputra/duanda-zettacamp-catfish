@@ -7,12 +7,7 @@ import { PostCardComponent } from './post-list/post-card/post-card.component';
 import { RouterModule } from '@angular/router';
 import { MaterialComponentModule } from '../material-component/material-component.module';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 
 
@@ -27,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     MaterialComponentModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   exports: [
     PostComponent,

@@ -1,1 +1,15 @@
-<p>post-form works!</p>
+<form class="form" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="legacy">
+        <mat-label>User ID</mat-label>
+        <input matInput formControlName="userId"/>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title"/>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+        <mat-label>Body</mat-label>
+        <input matInput formControlName="body"/>
+  </mat-form-field>
+  <button mat-raised-button color="primary">submit</button>
+</form>

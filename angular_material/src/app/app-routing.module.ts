@@ -7,7 +7,7 @@ import { PostComponent } from './post/post.component';
 const routes: Routes = [
   { path: '',component: PostComponent},
   { path: 'card', component: PostListComponent},
-  { path: 'detail/:id', component: PostFormComponent},
+  { path: 'detail', component: PostFormComponent},
   { path: '**', redirectTo:'/'}
 ];
 

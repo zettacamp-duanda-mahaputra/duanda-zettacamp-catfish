@@ -1,27 +1,39 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Post } from '../models/post';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
-  private readonly API_URL = 'https://jsonplaceholder.typicode.com/'; 
+  private readonly API_URL = 'https://jsonplaceholder.typicode.com/';
+  
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  getPost(){
-    return this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.com/')
+  getPost() {
+    return this.httpClient.get<Post[]>(
+      'https://jsonplaceholder.typicode.com/posts'
+    );
   }
 
-  getPostById(id:number){
-    return this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.com/'+ id)
+  getPostById(id: number) {
+    return this.httpClient.get<Post[]>(
+      'https://jsonplaceholder.typicode.com/posts/' + id
+    );
   }
 
-  patchPost(id:number, data:Post){
-    const url = this.API_URL + 'posts/' + id
-    return this.httpClient.patch<Post>(url,data)
+  patchPost(id: any, data: any) {
+    const url = this.API_URL + 'posts/' + id;
+    return this.httpClient.patch<Post>(url, data);
   }
 
+  addPost(data: any) {
+    return this.httpClient.post<Post[]>(
+      'https://jsonplaceholder.typicode.com/posts',
+      data
+    );
+  }
 
+  
 }
