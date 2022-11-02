@@ -7,20 +7,17 @@ import { Post } from '../models/post';
 })
 export class PostService {
   private readonly API_URL = 'https://jsonplaceholder.typicode.com/';
-  
 
   constructor(private httpClient: HttpClient) {}
 
   getPost() {
-    return this.httpClient.get<Post[]>(
-      'https://jsonplaceholder.typicode.com/posts'
-    );
+    const url = this.API_URL + 'posts/';
+    return this.httpClient.get<Post[]>(url);
   }
 
   getPostById(id: number) {
-    return this.httpClient.get<Post[]>(
-      'https://jsonplaceholder.typicode.com/posts/' + id
-    );
+    const url = this.API_URL + 'posts/' + id;
+    return this.httpClient.get<Post[]>(url);
   }
 
   patchPost(id: any, data: any) {
@@ -29,17 +26,12 @@ export class PostService {
   }
 
   addPost(data: any) {
-    return this.httpClient.post<Post[]>(
-      'https://jsonplaceholder.typicode.com/posts',
-      data
-    );
+    const url = this.API_URL + 'posts/';
+    return this.httpClient.post<Post[]>(url, data);
   }
 
-  deletePost(id: number){
+  deletePost(id: number) {
     const url = this.API_URL + 'posts/' + id;
     return this.httpClient.delete<any>(url);
-    
-}
-
-  
+  }
 }
