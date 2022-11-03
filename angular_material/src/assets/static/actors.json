@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Chris Evans",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/33/Mark_Kassen%2C_Tony_C%C3%A1rdenas_and_Chris_Evans_%28cropped%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 2,
+    "name": "Robert Downey Jr",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg/800px-Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 3,
+    "name": "Chris Hemsworth",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Chris_Hemsworth_by_Gage_Skidmore_2_%28cropped%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 4,
+    "name": "Mark Ruffalo",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Mark_Ruffalo_%2836201774756%29_%28cropped%29.jpg/800px-Mark_Ruffalo_%2836201774756%29_%28cropped%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 5,
+    "name": "Scarlett Johansson",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Scarlett_Johansson_by_Gage_Skidmore_2_%28cropped%2C_2%29.jpg/800px-Scarlett_Johansson_by_Gage_Skidmore_2_%28cropped%2C_2%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 6,
+    "name": "Don Cheadle",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/51/Don_Cheadle_UNEP_2011_%28cropped%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 7,
+    "name": "Sebastian Stan",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Sebastian_Stan_by_Gage_Skidmore_2_%28cropped%29.jpg/800px-Sebastian_Stan_by_Gage_Skidmore_2_%28cropped%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 8,
+    "name": "Chadwick Boseman",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Chadwick_Boseman_by_Gage_Skidmore_July_2017_%28cropped%29.jpg/800px-Chadwick_Boseman_by_Gage_Skidmore_July_2017_%28cropped%29.jpg",
+    "age": 50 
+  },
+  {
+    "id": 9,
+    "name": "Anthony Mackie",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Anthony_Mackie_by_Gage_Skidmore_2.jpg/800px-Anthony_Mackie_by_Gage_Skidmore_2.jpg",
+    "age": 50 
+  },
+  {
+    "id": 10,
+    "name": "Elizabeth Olsen",
+    "movie_id":["Ironman 1", "Captain America: The First Avenger","Thor"],
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Elizabeth_Olsen_by_Gage_Skidmore_2.jpg/800px-Elizabeth_Olsen_by_Gage_Skidmore_2.jpg",
+    "age": 50 
+  }
+]

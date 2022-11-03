@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Ironman 1",
+    "img": "https://upload.wikimedia.org/wikipedia/en/0/02/Iron_Man_%282008_film%29_poster.jpg",
+    "release": "2008",
+    "rating": 3,
+    "actor_id":["Don Cheadle","Sebastian Stan","Chadwick Boseman"],
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum reprehenderit earum! Possimus, laborum rem? Dolore, recusandae magni. Nesciunt ab beatae quidem impedit, praesentium rem ad at sed quos repudiandae?"
+  },
+  {
+    "id": 2,
+    "name": "Captain America: The First Avenger",
+    "img": "https://upload.wikimedia.org/wikipedia/en/3/37/Captain_America_The_First_Avenger_poster.jpg",
+    "release": "2010",
+    "rating": 4,
+    "actor_id":["Don Cheadle","Sebastian Stan","Chadwick Boseman"],
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum reprehenderit earum! Possimus, laborum rem? Dolore, recusandae magni. Nesciunt ab beatae quidem impedit, praesentium rem ad at sed quos repudiandae?"
+  },
+  {
+    "id": 3,
+    "name": "Thor",
+    "img": "https://upload.wikimedia.org/wikipedia/id/f/fc/Thor_poster.jpg",
+    "release": "2011",
+    "rating": 4,
+    "actor_id":["Don Cheadle","Sebastian Stan","Chadwick Boseman"],
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum reprehenderit earum! Possimus, laborum rem? Dolore, recusandae magni. Nesciunt ab beatae quidem impedit, praesentium rem ad at sed quos repudiandae?"
+  },
+  {
+    "id": 4,
+    "name": "The Incredible Hulk",
+    "img": "https://upload.wikimedia.org/wikipedia/en/f/f0/The_Incredible_Hulk_%28film%29_poster.jpg",
+    "release": "2009",
+    "rating": 4,
+    "actor_id":["Don Cheadle","Sebastian Stan","Chadwick Boseman"],
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum reprehenderit earum! Possimus, laborum rem? Dolore, recusandae magni. Nesciunt ab beatae quidem impedit, praesentium rem ad at sed quos repudiandae?"
+  },
+  {
+    "id": 5,
+    "name": "The Avengers",
+    "img": "https://upload.wikimedia.org/wikipedia/id/f/f9/TheAvengers2012Poster.jpg",
+    "release": "2012",
+    "rating": 5,
+    "actor_id":["Don Cheadle","Sebastian Stan","Chadwick Boseman"],
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum reprehenderit earum! Possimus, laborum rem? Dolore, recusandae magni. Nesciunt ab beatae quidem impedit, praesentium rem ad at sed quos repudiandae?"
+  },
+  {
+    "id": 6,
+    "name": "Captain America: Civil war",
+    "img": "https://upload.wikimedia.org/wikipedia/en/5/53/Captain_America_Civil_War_poster.jpg",
+    "release": "2016",
+    "rating": 5,
+    "actor_id":["Don Cheadle","Sebastian Stan","Chadwick Boseman"],
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum reprehenderit earum! Possimus, laborum rem? Dolore, recusandae magni. Nesciunt ab beatae quidem impedit, praesentium rem ad at sed quos repudiandae?"
+  }
+  
+]
