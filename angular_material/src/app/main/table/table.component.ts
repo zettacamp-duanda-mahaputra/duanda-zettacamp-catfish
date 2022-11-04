@@ -93,18 +93,5 @@ export class TableComponent implements OnInit {
     });
   }
 
-  private createFilter(): (contact: Table, filter: string) => boolean {
-    let filterFunction = function (contact: any, filter: any): boolean {
-      let searchTerms = JSON.parse(filter);
-      console.log('ggg', contact);
-      
-      return contact.user_status.indexOf(searchTerms.status) !== -1;
-    };
-    return filterFunction;
-  }
-
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue
-  // }
+  
 }
