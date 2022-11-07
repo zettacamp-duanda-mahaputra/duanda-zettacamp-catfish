@@ -19,8 +19,10 @@ export class TableComponent implements OnInit {
   nameFilter = new FormControl();
   userTypeFilter = new FormControl();
   emailFilter = new FormControl();
+  statusFilter = new FormControl()
 
-  filteredValues = { name: '', user_type: '', email: ''};
+  filteredValues:any = { name: '', user_type: '', email: '', user_status: ''};
+  availableSources: Dropdown[] = Drop;
 
   constructor(private tableService: TableService) {}
 
@@ -42,9 +44,13 @@ export class TableComponent implements OnInit {
         this.filteredValues['email'] = emailFilterValue;
         this.dataSource.filter = JSON.stringify(this.filteredValues);
       });
+      this.statusFilter.valueChanges.subscribe((userStatusFilterValue) => {
+        this.filteredValues['user_status'] = userStatusFilterValue;
+        this.dataSource.filter = JSON.stringify(this.filteredValues);
+      });
       this.dataSource.filterPredicate = this.customFilterPredicate();
     });
-    this.fieldListener();
+    
   }
 
   customFilterPredicate() {
@@ -75,23 +81,13 @@ export class TableComponent implements OnInit {
     return myFilterPredicate;
   }
 
-  availableSources: Dropdown[] = Drop;
+ 
 
-  sourceFilter = new FormControl('');
+  
 
-  filterValues: any = {
-    status: '',
-  };
+ 
 
-  private fieldListener() {
-    this.sourceFilter.valueChanges.subscribe((status) => {
-      console.log(status);
 
-      this.filterValues.status = status;
-      this.dataSource.filter = JSON.stringify(this.filterValues);
-      console.log(this.dataSource);
-    });
-  }
 
   
 }

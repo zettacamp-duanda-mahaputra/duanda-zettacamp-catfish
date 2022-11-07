@@ -18,7 +18,7 @@
 <div class="vertical-form-field">
   <div>
     <mat-form-field appearance="fill" class="no-label-field">
-      <mat-select [formControl]="sourceFilter">
+      <mat-select [formControl]="statusFilter">
         <mat-option value=""> -- Filter Status -- </mat-option>
         <mat-option *ngFor="let source of availableSources" [value]="source.value">
           {{source.status}}
