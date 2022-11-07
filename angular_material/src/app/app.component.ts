@@ -35,14 +35,11 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getData();
-  }
-
-  getData() {
     this.userService.user$.subscribe((data) => {
       this.dataSource.data = data;
-    });
-  }
+    }); 
+   }
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddUserComponent, {});
