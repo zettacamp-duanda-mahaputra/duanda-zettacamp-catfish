@@ -1,0 +1,25 @@
+{
+  "add_user": "Add User",
+  "language": "Language",
+  "cancel": "Cancel",
+  "add": "Add",
+  "user_field": {
+        "civility": {
+              "title": "Civility",
+              "options": {
+                    "mr": "Mr",
+                    "mrs": "Mrs"
+              }
+        },
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "date_of_birth": "Date Of Birth",
+        "gender": {
+              "title": "Gender",
+              "options": {
+                    "male": "Male",
+                    "female": "Female"
+              }
+        }
+  }
+}

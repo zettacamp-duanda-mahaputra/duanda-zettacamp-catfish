@@ -1,0 +1,31 @@
+.wrap{
+  padding: 80px;
+}
+
+table {
+  width: 100%;
+}
+
+.head{
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.head button{
+  background-color: salmon;
+}
+
+th{
+  background-color: cornflowerblue;
+  font-weight: bolder;
+  color: black;
+  font-size: 15px;
+}
+
+td{
+  background-color: #eaeaea;
+  font-weight: bolder;
+  color: black;
+  font-size: 10px;
+}

@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>{{ "add_user" | translate }}</h1>
+<div class="wrap">
+  <div class="form" [formGroup]="myForm">
+    <mat-label class="civil">{{
+      "user_field.civility.title" | translate
+    }}</mat-label>
+    <mat-radio-group aria-label="Select an Option" formControlName="civility">
+      <mat-radio-button value="mr">
+        {{ "user_field.civility.options.mr" | translate }}
+      </mat-radio-button>
+      <mat-radio-button value="mrs">{{
+        "user_field.civility.options.mrs" | translate
+      }}</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "user_field.first_name" | translate }}</mat-label>
+      <input matInput formControlName="first_name" />
+      <mat-error></mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "user_field.last_name" | translate }}</mat-label>
+      <input matInput formControlName="last_name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "user_field.date_of_birth" | translate }}</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="date_of_birth"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "user_field.gender.title" | translate }}</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="male">{{
+          "user_field.gender.options.male" | translate
+        }}</mat-option>
+        <mat-option value="female">{{
+          "user_field.gender.options.female" | translate
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button (click)="onClose()">{{ "cancel" | translate }}</button>
+    <button mat-raised-button color="primary" (click)="onAdd()" cdkFocusInitial>
+      {{ "add" | translate }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.form {
+  width: 500px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.civil{
+  font-weight: bolder;
+}
+
