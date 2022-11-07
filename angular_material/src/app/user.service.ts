@@ -18,7 +18,6 @@ export class UserService {
   addUser(data: User) {
     const users = this.getUsers();
     users.push(data);
-
     this.user.next(users);
   }
 }

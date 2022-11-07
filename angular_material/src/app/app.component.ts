@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { User } from './user.model';
 import { UserService } from './user.service';
 import { AddUserComponent } from './add-user/add-user.component';
@@ -18,6 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent implements OnInit {
   title = 'angular_material';
+ 
 
   displayedColumns: string[] = [
     'civility',
@@ -37,12 +34,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.userService.user$.subscribe((data) => {
       this.dataSource.data = data;
-    }); 
-   }
-
+    });
+  }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(AddUserComponent, {});
+    const dialogRef = this.dialog.open(AddUserComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       if (!result) return;
@@ -52,7 +48,7 @@ export class AppComponent implements OnInit {
       Swal.fire({
         icon: 'success',
         title: 'Success',
-        text: 'Data Completed'
+        text: 'Data Completed',
       });
     });
   }

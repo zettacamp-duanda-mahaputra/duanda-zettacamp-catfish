@@ -4,19 +4,17 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from '../user.model';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css'],
 })
 export class AddUserComponent implements OnInit {
-
   myForm: any = new FormGroup({
     civility: new FormControl(null),
-    first_name: new FormControl(null,Validators.required),
-    last_name: new FormControl(null,Validators.required),
-    date_of_birth: new FormControl(null,Validators.required),
+    first_name: new FormControl(null, Validators.required),
+    last_name: new FormControl(null, Validators.required),
+    date_of_birth: new FormControl(null, Validators.required),
     gender: new FormControl(null),
   });
 
@@ -29,19 +27,19 @@ export class AddUserComponent implements OnInit {
 
   onClose() {
     this.dialogRef.close();
-}
+  }
 
-onAdd() {
+  onAdd() {
     const isValid = this.myForm.valid;
 
     if (!isValid) {
-          Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Data not Completed'
-          })
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Data not Completed',
+      });
     } else {
-          this.dialogRef.close(this.myForm.value);
+      this.dialogRef.close(this.myForm.value);
     }
-}
+  }
 }
