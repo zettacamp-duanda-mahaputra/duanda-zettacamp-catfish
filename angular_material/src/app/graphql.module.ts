@@ -11,7 +11,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     link: httpLink.create({ uri,
       headers: new HttpHeaders().set(
       'Authorization',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmZlYzVjMmNlNjM1YjJmYjZhODFmMmQiLCJlbWFpbCI6Im0ubXVnbmllcjJAeW9wbWFpbC5jb20iLCJpYXQiOjE2Njc4ODk2MDgsImV4cCI6MTY2Nzk3NjAwOH0.c7KwkQdeMa2ieOh4Gc6AJ7OKPl_PufwQlrttx-qdRUU'
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmZlYzVjMmNlNjM1YjJmYjZhODFmMmQiLCJlbWFpbCI6Im0ubXVnbmllcjJAeW9wbWFpbC5jb20iLCJpYXQiOjE2Njc5ODIxOTgsImV4cCI6MTY2ODA2ODU5OH0.1mzsoG1XbwBCoximTahZbZj-K6fXOGkSYWSB7NRjU2E'
       ),
       }),
     cache: new InMemoryCache(),

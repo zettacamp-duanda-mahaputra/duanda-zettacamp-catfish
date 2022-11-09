@@ -1,2 +1,25 @@
-<app-promo-list></app-promo-list>
+<h1 mat-dialog-title>Add Promo</h1>
+<div class="wrap">
+  <div class="form" [formGroup]="myForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Ref</mat-label>
+      <input matInput formControlName="ref"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Sub_Title</mat-label>
+      <input matInput formControlName="sub_title"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description"/>
+    </mat-form-field>
+  </div>
+<button mat-button (click)="onSubmit()">Submit</button>
+</div>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
 
+<app-promo-list></app-promo-list>
