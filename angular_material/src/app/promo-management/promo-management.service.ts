@@ -15,12 +15,9 @@ const QUERY = `query {
 
 const MUTATE_QUERY = `
   mutation CreatePromo(
-    $ref:String
-    $title:String
-    $sub_title:String
-    $description:String
+    $data: PromoInput
   ){
-    CreatePromo(promo_input:{ref:$ref,title:$title,sub_title:$sub_title,description:$description})
+    CreatePromo(promo_input:$data)
     {
       title
       sub_title
@@ -51,7 +48,7 @@ export class PromoManagementService {
     
     return this.apollo.mutate({
       mutation: gql(MUTATE_QUERY),
-      variables: {ref,title,sub_title,description}
+      variables: {data}
     })
   }
 }
