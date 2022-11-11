@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-form',
@@ -18,7 +19,7 @@ export class FormComponent implements OnInit {
     img: new FormControl(null),
   });
 
-  constructor(private userService: UserService, private router:Router) {}
+  constructor(private userService: UserService, private router:Router,  private translate: TranslateService) {}
 
   ngOnInit(): void {}
 
@@ -41,5 +42,8 @@ export class FormComponent implements OnInit {
     }else{
       Swal.fire('Not Completed', 'Data Not Valid', 'error');
     }
+  }
+  changeLanguage(lang: string) {
+    this.translate.use(lang);
   }
 }

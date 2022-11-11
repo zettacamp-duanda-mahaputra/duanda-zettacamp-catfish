@@ -16,10 +16,17 @@
     },
     {
       "id": 3,
-      "name": "ffdfdfd",
-      "password": "sdsds",
-      "email": "dsds@kadjk.com",
-      "img": "asdsds"
+      "name": "farhan",
+      "password": "123456",
+      "email": "farhan@gmail.com",
+      "img": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+    },
+    {
+      "id": 4,
+      "name": "farhan",
+      "password": "mdkjdkedew",
+      "email": "farhan@gmail.com",
+      "img": "https://plus.unsplash.com/premium_photo-1664541336837-75c5f1bbdeb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
     }
   ]
 }

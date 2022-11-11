@@ -1,19 +1,27 @@
+<mat-form-field class="select-language" appearance="outline">
+  <mat-label>{{ 'language' | translate }}</mat-label>
+  <mat-select  #lang (selectionChange)="changeLanguage(lang.value)">
+        <mat-option value="en">English</mat-option>
+        <mat-option value="id">Indonesian</mat-option>
+  </mat-select>
+</mat-form-field>
+
 <form class="form" [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
   <mat-form-field appearance="legacy">
-    <mat-label>Image</mat-label>
+    <mat-label>{{"img" | translate}}</mat-label>
     <input matInput formControlName="img"/>
 </mat-form-field>
   <mat-form-field appearance="legacy">
-        <mat-label>Name</mat-label>
+        <mat-label>{{"name" | translate}}</mat-label>
         <input matInput formControlName="name"/>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
+    <mat-label>{{"email" | translate}}</mat-label>
     <input matInput placeholder="pat@example.com" formControlName="email" required>
     <mat-error *ngIf="userForm.get('email')?.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
   <mat-form-field appearance="legacy">
-        <mat-label>Password</mat-label>
+        <mat-label>{{"password" | translate}}</mat-label>
         <input matInput formControlName="password"/>
   </mat-form-field>
   <button mat-raised-button color="primary">submit</button>
