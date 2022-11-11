@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "duandamputra",
+      "password": "123456",
+      "img": "https://images.unsplash.com/photo-1657214059388-a35554015a42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80",
+      "email":"duanda.mahaputra@zettacamp.pro"
+    },
+    {
+      "id": 2,
+      "name": "annam",
+      "password": "123456",
+      "img": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "email":"annam@zettacamp.pro"
+    }
+  ]
+}
