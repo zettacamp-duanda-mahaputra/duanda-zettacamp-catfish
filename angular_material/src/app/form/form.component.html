@@ -1,1 +1,20 @@
-
+<form class="form" [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+  <mat-form-field appearance="legacy">
+    <mat-label>Image</mat-label>
+    <input matInput formControlName="img"/>
+</mat-form-field>
+  <mat-form-field appearance="legacy">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name"/>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="pat@example.com" formControlName="email" required>
+    <mat-error *ngIf="userForm.get('email')?.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password"/>
+  </mat-form-field>
+  <button mat-raised-button color="primary">submit</button>
+</form>

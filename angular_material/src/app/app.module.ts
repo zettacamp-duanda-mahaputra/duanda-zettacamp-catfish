@@ -6,6 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormModule } from './form/form.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+import { CardModule } from './card/card.module';
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +20,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms'
     MaterialModule,
     FormModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

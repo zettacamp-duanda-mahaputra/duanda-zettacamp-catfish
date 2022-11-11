@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-list>
+      <mat-list-item>
+        <a mat-button routerLink="/form" routerLinkActive="active">
+          <mat-icon>movie</mat-icon> Form
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <a mat-button routerLink="/card" routerLinkActive="active">
+          <mat-icon>people</mat-icon> Card
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
