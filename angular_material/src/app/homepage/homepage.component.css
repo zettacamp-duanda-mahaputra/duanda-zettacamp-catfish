@@ -1,0 +1,17 @@
+/* .home {
+  background-image: url('https://www.cornerhouserestaurants.co.uk/templates/yootheme/cache/homepage-07-b0e63288.jpeg');
+  width: 100%;
+  height: 100%;
+  background-position: center;
+} */
+
+.home iframe{
+  align-items: center;
+  margin-left: 340px;
+  margin-top: 50px;
+}
+
+.home h2{
+  text-align: center;
+  
+}
