@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <a routerLink="home">
+  <!-- <a routerLink="home">
     <img
       src="https://cdn.pixabay.com/photo/2021/05/25/02/03/restaurant-6281067_1280.png"
       alt="me"
@@ -16,7 +16,11 @@
     <button mat-button routerLink="cart">
       <mat-icon>add_shopping_cart</mat-icon>
     </button>
-  </div>
+  </div> -->
+  <button mat-button *ngFor="let menu of menus" [routerLink]="[menu?.routing]">{{ menu?.page}}</button>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<div>
+  <router-outlet></router-outlet>
+</div>
+

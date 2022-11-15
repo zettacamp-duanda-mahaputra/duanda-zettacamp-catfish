@@ -5,8 +5,7 @@ mat-toolbar{
   width: 100%;
   align-items: center;
   background-color: white;
-  /* position: fixed;
-  background: transparent; */
+  background: transparent;
 }
 
 
@@ -23,6 +22,13 @@ img {
 
 p{
   margin-right: 10px;
+}
+
+button{
+  font-weight: bold;
+  font-size: large;
+  font-family: 'Righteous', cursive;
+
 }
 
 button.active{
