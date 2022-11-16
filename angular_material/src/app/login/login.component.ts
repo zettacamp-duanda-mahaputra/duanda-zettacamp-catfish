@@ -1,3 +1,4 @@
+import { JSDocComment } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -24,19 +25,22 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     if(this.myForm.valid){
       this.loginService.getToken(this.myForm.value).subscribe((data:any) =>{
-        console.log(data);
         let userData = data.data.loginUser.userType.permission
         let userToken = data.data.loginUser.token
+        let userId = data.data.loginUser._id
         for(let user of userData){
           user.routing = `${user.page}`
+          if(user.page === 'Login'){
+            user.view = false
+          }
+          console.log(user);
           console.log(user.page);
-          
         }
         localStorage.setItem('userToken', userToken)
         localStorage.setItem('userData', JSON.stringify(userData))
-        
+        localStorage.setItem('userId', userId)
       })
-      this.router.navigate(['Menu'])
+      this.router.navigate(['Homepage'])
       this.myForm.reset()
 
 

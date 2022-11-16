@@ -1,0 +1,21 @@
+<h1>Add Ingredient</h1>
+<div class="wrap">
+  <div class="form" [formGroup]="myForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Stock</mat-label>
+      <input matInput formControlName="stock" />
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button (click)="onClose()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="onAdd()" cdkFocusInitial>
+      Add
+    </button>
+  </div>
+</div>
