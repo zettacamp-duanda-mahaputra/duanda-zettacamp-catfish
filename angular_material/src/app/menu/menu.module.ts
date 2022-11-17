@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { CardComponent } from './list/card/card.component';
 import { MaterialModule } from '../material/material.module';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   declarations: [
     MenuComponent,
     ListComponent,
-    CardComponent
+    CardComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ const routes: Routes = [
   exports: [
     MenuComponent,
     ListComponent,
-    CardComponent
+    CardComponent,
+    DialogComponent
   ]
 })
 export class MenuModule { }

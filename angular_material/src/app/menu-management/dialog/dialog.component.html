@@ -1,0 +1,41 @@
+<form [formGroup]="myForm">
+  <mat-form-field class="input" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="recipe_name" />
+  </mat-form-field>
+  <br>
+  <mat-form-field class="input" appearance="fill">
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price" />
+  </mat-form-field>
+  <br>
+  <mat-form-field class="input" appearance="fill">
+    <mat-label>Image</mat-label>
+    <input matInput formControlName="image" />
+  </mat-form-field>
+
+  
+  <div formArrayName="ingredients">
+    <div *ngFor="let address of ingredientsForms.controls; let i = index">
+      <div [formGroupName]="i">
+        <h3>Address{{i + 1}}</h3>
+
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Stock</mat-label>
+          <input matInput formControlName="stock" />
+        </mat-form-field>
+
+        <!-- <button type="button" mat-button (click)="removeForm(i)" *ngIf="addressForms.length > 1">Delete
+        </button> -->
+      </div>
+    </div>
+    <!-- <button type="button" mat-button (click)="pushForm()">Add Address</button> -->
+  </div>
+  <button class="btn" (ngSubmit)="onClose()">Submit</button>
+</form>
+

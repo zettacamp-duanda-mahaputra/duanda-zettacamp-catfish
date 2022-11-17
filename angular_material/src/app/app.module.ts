@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { StockManagementModule } from './stock-management/stock-management.module';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    StockManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

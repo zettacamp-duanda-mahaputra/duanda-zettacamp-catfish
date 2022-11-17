@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import Swal from 'sweetalert2';
@@ -11,7 +11,6 @@ import { StockManagementService } from './stock-management.service';
   styleUrls: ['./stock-management.component.css'],
 })
 export class StockManagementComponent implements OnInit {
-  ingredients: [] = [];
   dataSource = new MatTableDataSource();
   displayedColumns: any[] = ['name', 'stock', 'status', 'action'];
 
@@ -21,31 +20,52 @@ export class StockManagementComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.stockManagementService.getAllIngredients().valueChanges.subscribe((data: any) => {
-      console.log(data);
+    this.getAll();
+  }
 
-      this.ingredients = data.data.GetAllIngredients.data;
-      this.dataSource = new MatTableDataSource(
-        data.data.GetAllIngredients.data
-      );
+  getAll() {
+    this.stockManagementService.getAllIngredients().subscribe((data: any) => {
+      this.dataSource.data = data;
+      console.log(data);
     });
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(FormComponent);
+  openDialog(data?: any): void {
+    const dialogRef = this.dialog.open(FormComponent, { data: data || null });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (!result) return;
 
-      this.stockManagementService.addIngredient(result).subscribe(() => this.stockManagementService.getAllIngredients().refetch())
-
-      Swal.fire({
-        icon: 'success',
-        title: 'Success',
-        text: 'Data Completed',
-      });
+      if ('_id' in result) {
+        this.stockManagementService
+          .updateIngredient(result._id, { stock: result.stock })
+          .subscribe((data) => {
+            Swal.fire({
+              icon: 'success',
+              title: 'Success',
+              text: 'Data Completed',
+            }).then(() => {
+              this.getAll();
+            });
+          });
+      } else {
+        this.stockManagementService.addIngredient(result).subscribe((data) => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Data Completed',
+          }).then(() => {
+            this.getAll();
+          });
+        });
+      }
     });
   }
 
-  onDelete(){}
+  onDelete(id: any) {
+    this.stockManagementService.deleteIngredient(id).subscribe(() => {
+      this.getAll();
+    });
+  }
 }
+//CISI PERNAH DISINI

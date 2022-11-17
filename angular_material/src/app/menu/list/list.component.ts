@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-list',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  menus = [1,2]
-  constructor() { }
+  menus:any = []
+  constructor(private menuService:MenuService) { }
 
   ngOnInit(): void {
+    this.menuService.get().subscribe((data:any)=>{
+      console.log(data);
+      this.menus = data.data.getAllRecipes.data
+    })
   }
 
 }

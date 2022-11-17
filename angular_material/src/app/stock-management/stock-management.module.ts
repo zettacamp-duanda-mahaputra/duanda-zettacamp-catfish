@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms'
 import { MaterialModule } from '../material/material.module';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   exports: [
     StockManagementComponent,
     FormComponent
-  ]
+  ],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+
+]
 })
 export class StockManagementModule { }
