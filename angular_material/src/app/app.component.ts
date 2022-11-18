@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   title = 'angular_material';
   menus: any = [];
   isToken: boolean = false;
+  isLogout:boolean = false
 
   ngOnInit() {
     if (localStorage.getItem('userToken') !== null) {

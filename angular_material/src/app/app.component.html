@@ -16,9 +16,9 @@
     <button mat-button [routerLink]="['Login']" *ngIf="!isToken">
       <mat-icon>add_shopping_cart</mat-icon>
     </button>
-    <button mat-button [routerLink]="['Homepage']" *ngIf="isToken">Logout</button>
   </div>
   <button mat-button *ngFor="let menu of menus" [routerLink]="[menu?.routing]">{{ menu?.page }}</button>
+  <button mat-button [routerLink]="['Homepage']"  *ngIf="isToken">Logout</button>
 </mat-toolbar>
 
 <div>
