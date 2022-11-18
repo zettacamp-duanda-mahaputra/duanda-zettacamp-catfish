@@ -16,26 +16,28 @@
 
   
   <div formArrayName="ingredients">
-    <div *ngFor="let address of ingredientsForms.controls; let i = index">
+    <div *ngFor="let ingredient of ingredientsForms.controls; let i = index">
       <div [formGroupName]="i">
-        <h3>Address{{i + 1}}</h3>
+        <h3>Ingredient{{i + 1}}</h3>
 
         <mat-form-field class="input" appearance="fill">
           <mat-label>Name</mat-label>
-          <input matInput formControlName="name" />
+          <mat-select matInput formControlName="ingredient_id" >
+            <mat-option *ngFor="let ingredient of stockIngredient" [value]="ingredient._id">{{ingredient.name}}</mat-option>
+          </mat-select>
         </mat-form-field>
 
         <mat-form-field class="input" appearance="fill">
           <mat-label>Stock</mat-label>
-          <input matInput formControlName="stock" />
+          <input type="number" matInput formControlName="stock" />
         </mat-form-field>
 
         <!-- <button type="button" mat-button (click)="removeForm(i)" *ngIf="addressForms.length > 1">Delete
         </button> -->
       </div>
     </div>
-    <!-- <button type="button" mat-button (click)="pushForm()">Add Address</button> -->
+    <button type="button" mat-raised-button color="prmary" (click)="addIngredients()">Add Ingredient</button>
   </div>
-  <button class="btn" (ngSubmit)="onClose()">Submit</button>
+  <button mat-raised-button color="primary" class="btn" (ngSubmit)="onClose()">Submit</button>
 </form>
 

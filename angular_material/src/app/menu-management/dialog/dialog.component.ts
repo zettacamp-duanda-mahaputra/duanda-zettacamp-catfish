@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MenuManagementService } from '../menu-management.service';
 import Swal from 'sweetalert2';
 import { MenuManagementComponent } from '../menu-management.component';
+import { StockManagementService } from 'src/app/stock-management/stock-management.service';
 
 
 @Component({
@@ -24,15 +25,26 @@ export class DialogComponent implements OnInit {
     ingredients: new FormArray([])
   });
 
+  stockIngredient:any = []
+
   get ingredientsForms (){
     return this.myForm.get('ingredients') as FormArray
   }
-  constructor(public dialogRef: MatDialogRef<MenuManagementComponent>,@Inject(MAT_DIALOG_DATA) private data: any) { }
+  constructor(public dialogRef: MatDialogRef<MenuManagementComponent>,@Inject(MAT_DIALOG_DATA) private data: any, private stockManagementService:StockManagementService) { }
 
   ngOnInit(): void {
+    this.addIngredients()
     if(this.data){
       this.myForm.patchValue(this.data)
     }
+
+    this.stockManagementService.getAllIngredients().subscribe(data=>{
+      this.stockIngredient = data
+    })
+  }
+
+  addIngredients(){
+    this.ingredientsForms.push(this.formIngredients)
   }
 
   onClose() {

@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
           if(user.page === 'Login'){
             user.view = false
           }
-          console.log(user);
-          console.log(user.page);
+          // console.log(user);
+          // console.log(user.page);
         }
         localStorage.setItem('userToken', userToken)
         localStorage.setItem('userData', JSON.stringify(userData))
