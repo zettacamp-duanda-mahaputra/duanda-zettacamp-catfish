@@ -2,60 +2,86 @@ import { JSDocComment } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import { map } from 'rxjs';
+import Swal from 'sweetalert2';
 import { LoginService } from './login.service';
-
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   myForm = new FormGroup({
-    email: new FormControl(null,Validators.required),
-    password: new FormControl(null,Validators.required)
-  })
+    email: new FormControl(null, Validators.required),
+    password: new FormControl(null, Validators.required),
+  });
 
-  constructor(private loginService:LoginService, private router:Router) { }
+  constructor(private loginService: LoginService, private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSubmit() {
+    if (this.myForm.invalid) {};
+
+    const value = this.myForm.value;
+    this.loginService
+      .getToken(value)
+      .pipe(
+        map((data: any) => {
+          return data.data.loginUser;
+        })
+      )
+      .subscribe({
+        next: (data: any) => this.successHandler(data),
+        error: (error: any) => this.errorHandler(error),
+      });
   }
 
-  onSubmit(){
-    if(this.myForm.valid){
-      this.loginService.getToken(this.myForm.value).subscribe((data:any) =>{
-        let userData = data.data.loginUser.userType.permission
-        let userToken = data.data.loginUser.token
-        let userId = data.data.loginUser._id
-        for(let user of userData){
-          user.routing = `${user.page}`
-          if(user.page === 'Login'){
-            user.view = false
-          }
-          // console.log(user);
-          // console.log(user.page);
-        }
-        localStorage.setItem('userToken', userToken)
-        localStorage.setItem('userData', JSON.stringify(userData))
-        localStorage.setItem('userId', userId)
-      })
-      this.router.navigate(['Homepage'])
-      this.myForm.reset()
+  successHandler(data: any) {
+    console.log(data);
 
+    let userToken = data.token;
+    let userRole = data.userType.role;
+    let userId = data._id
 
-      Swal.fire(
-        'Success',
-        'Completed',
-        'success'
-      )
-    }else{
-      Swal.fire(
-        'Failed',
-        'Not Completed',
-        'error'
-      )
-    }
+    localStorage.setItem('userToken', userToken);
+    localStorage.setItem('userRole', userRole);
+    localStorage.setItem('userId', userId);
+
+      this.router.navigate(['Homepage']).then(()=>{
+              window.location.reload()
+    })
   }
 
+  errorHandler(error: any) {
+    console.log(error);
+    
+    Swal.fire('Failed', 'Not Completed', 'error');
+  }
 }
+
+//   onSubmit() {
+//     if (this.myForm.valid) {
+//       const payload: any = this.myForm.value;
+//       this.loginService.getToken(payload).subscribe((resp: any) => {
+//         if (resp) {
+//           window.location.reload()    
+//         }
+//       })
+//     } else {
+//       if (!this.myForm.valid) {
+//         Swal.fire({
+//           icon: 'error',
+//           title: 'email or password invalid !',
+//         });
+//       } else {
+//         Swal.fire({
+//           icon: 'error',
+//           title: 'email or password invalid !',
+//         });
+//       }  
+//     }
+//   }
+// }
+

@@ -11,8 +11,8 @@ export class StockManagementService {
   getAllIngredients() {
     return this.apollo.query({
       query: gql`
-        query {
-          GetAllIngredients(paginator: { limit: 30, page: 0 }, match:{status:active}) {
+        query{
+          GetAllIngredients(paginator: { limit: 30, page: 0 }) {
             data {
               _id
               name

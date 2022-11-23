@@ -1,8 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import Swal from 'sweetalert2';
 import { FormComponent } from './form/form.component';
+import { Drop } from './model/drop';
+import { Dropdown } from './model/dropdown';
 import { StockManagementService } from './stock-management.service';
 
 @Component({
@@ -14,6 +17,10 @@ export class StockManagementComponent implements OnInit {
   dataSource = new MatTableDataSource();
   displayedColumns: any[] = ['name', 'stock', 'status', 'action'];
 
+  statusFilter = new FormControl();
+  filteredValues: any = { status: '' };
+  availableSources: Dropdown[] = Drop;
+
   constructor(
     private stockManagementService: StockManagementService,
     public dialog: MatDialog
@@ -21,6 +28,26 @@ export class StockManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
+
+    this.statusFilter.valueChanges.subscribe((statusFilterValue) => {
+      this.filteredValues['status'] = statusFilterValue;
+      this.dataSource.filter = JSON.stringify(this.filteredValues);
+    });
+    this.dataSource.filterPredicate = this.customFilterPredicate();
+  }
+
+  customFilterPredicate() {
+    const myFilterPredicate = function (data: any, filter: string): any {
+      console.log(data, filter);
+
+      let searchString = JSON.parse(filter);
+      let statusFound = data.status.includes(
+        (searchString.status || '')
+      );
+
+      return statusFound;
+    };
+    return myFilterPredicate;
   }
 
   getAll() {

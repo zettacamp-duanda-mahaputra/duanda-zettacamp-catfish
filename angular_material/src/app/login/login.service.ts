@@ -17,6 +17,7 @@ export class LoginService {
             _id
             token
             userType {
+              role
               permission {
                 page
                 view

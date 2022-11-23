@@ -32,6 +32,6 @@ button{
 }
 
 button.active{
-  color: black !important; 
-  background-color: salmon;
+  color: rgb(255, 255, 255) !important; 
+  background-color: rgb(129, 56, 161);
 }

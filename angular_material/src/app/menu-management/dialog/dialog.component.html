@@ -18,7 +18,7 @@
   <div formArrayName="ingredients">
     <div *ngFor="let ingredient of ingredientsForms.controls; let i = index">
       <div [formGroupName]="i">
-        <h3>Ingredient{{i + 1}}</h3>
+        <h3>Ingredient {{i + 1}}</h3>
 
         <mat-form-field class="input" appearance="fill">
           <mat-label>Name</mat-label>
@@ -38,6 +38,7 @@
     </div>
     <button type="button" mat-raised-button color="prmary" (click)="addIngredients()">Add Ingredient</button>
   </div>
+  <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
   <button mat-raised-button color="primary" class="btn" (click)="onClose()">Submit</button>
 </form>
 

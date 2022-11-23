@@ -3,21 +3,15 @@
     <img mat-card-image [src]="items.image" alt="me" />
   </div>
   <mat-card-title>{{ items.recipe_name }}</mat-card-title>
+  <mat-card-subtitle>Available: {{items.available}}</mat-card-subtitle>
   <mat-card-content>
     <p>
       {{ items.price | currency: "IDR " }}
     </p>
-    <p>
-      {{ items.description }}
-    </p>
-    <mat-form-field class="qty" appearance="fill">
-      <mat-label>Quantity</mat-label>
-      <input type="number" matInput />
-    </mat-form-field>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary">
-      <mat-icon>add</mat-icon>Add to Cart
+    <button [disabled]="items.available === 0" mat-raised-button color="warn" (click)="openDialog(items)">
+      Details
     </button>
   </mat-card-actions>
 </mat-card>

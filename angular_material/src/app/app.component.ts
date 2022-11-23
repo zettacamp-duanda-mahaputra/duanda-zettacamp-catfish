@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +10,31 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'angular_material';
   menus: any = [];
-  isToken: boolean = false;
-  isLogout:boolean = false
+  isLogin: any
+  role: any;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    if (localStorage.getItem('userToken') !== null) {
-      this.isToken = true;
-      let userData: any = localStorage.getItem('userData');
-      userData = JSON.parse(userData);
-      this.menus = userData.filter((val: any) => val.view === true);
-    }else{
-      this.isToken = false;
-    }
+    this.isLogin = localStorage.getItem('userToken');
+    this.role = localStorage.getItem('userRole');
+  
+  }
+
+  isLogout() {
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('userData');
+    localStorage.removeItem('userId');
+    this.router.navigate(['Homepage']).then(() => {
+      window.location.reload();
+    });
+  }
+
+  onCart() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Cant Acces Cart Before Login',
+    });
   }
 }

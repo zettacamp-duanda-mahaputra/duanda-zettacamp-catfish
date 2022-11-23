@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
+import { Apollo, gql, Mutation } from 'apollo-angular';
 import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
+
   constructor(private apollo: Apollo) {}
 
   get() {
     return this.apollo.query({
       query: gql`
         query {
-          getAllRecipes(paginator: { limit: 30, page: 0 }, match:{status: publish}) {
+          getAllRecipes(
+            paginator: { limit: 30, page: 0 }
+            match: { status: publish }
+          ) {
             data {
               _id
               available
@@ -28,10 +32,12 @@ export class MenuService {
                   stock
                 }
               }
-            }  
+            }
           }
         }
       `,
     });
   }
+
+ 
 }

@@ -6,6 +6,8 @@ import { ListComponent } from './list/list.component';
 import { CardComponent } from './list/card/card.component';
 import { MaterialModule } from '../material/material.module';
 import { DialogComponent } from './dialog/dialog.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+
 
 
 const routes: Routes = [
@@ -24,7 +26,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   exports: [
     MenuComponent,

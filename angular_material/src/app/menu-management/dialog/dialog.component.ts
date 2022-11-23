@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { MenuManagementComponent } from '../menu-management.component';
@@ -12,48 +12,70 @@ import { StockManagementService } from 'src/app/stock-management/stock-managemen
 })
 export class DialogComponent implements OnInit {
   myForm = new FormGroup({
-    recipe_name: new FormControl(null),
-    price: new FormControl(null),
-    image: new FormControl(null),
+    recipe_name: new FormControl(null, Validators.required),
+    price: new FormControl(null, [Validators.required,Validators.min(1)]),
+    image: new FormControl(null,Validators.required),
     ingredients: new FormArray([]),
   });
 
   stockIngredient: any;
 
-  get ingredientsForms() {
-    return this.myForm.get('ingredients') as FormArray;
-  }
   constructor(
     public dialogRef: MatDialogRef<MenuManagementComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: any,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private stockManagementService: StockManagementService
   ) {}
 
   ngOnInit(): void {
-    this.addIngredients();
-
+    if(this.data.length){
+      this.addIngredients();
+    }
+    
     this.stockManagementService.getAllIngredients().subscribe((result) => {
-      
       this.stockIngredient = result;
+    });
 
-      if (this.data) {
-        const data: any = Object.assign({}, this.data);
+    if (this.data) {
+      console.log(this.data);
+      
+      const data: any = {};
 
-        data.ingredients = data.ingredients.map((item: any) => {
-          const meti = Object.assign({}, item);
-          meti.ingredient_id = meti.ingredient_id._id;
-          return meti;
-        });
+      for (let item of Object.entries(this.data)) {
+        const [key, value]: any = item;
 
-        for (let i = 0; i < data.ingredients.length; i++) {
-          this.addIngredients();
+        if (key == 'recipe_name') {
+          data.recipe_name = value;
         }
 
-        this.myForm.patchValue(this.data);
-      } else {
-        this.addIngredients();
+        if (key == 'price') {
+          data.price = value;
+        }
+
+        if (key == 'image') {
+          data.image = value;
+        }
+
+        if (key == 'ingredients') {
+          data.ingredients = value.map((ing: any) => {
+            this.addIngredients();
+
+            return {
+              stock_used: ing?.stock_used,
+              ingredient_id: ing?.ingredient_id?._id,
+            };
+          });
+        }
       }
-    });
+      console.log(this.data);
+
+      this.myForm.patchValue(data);
+    } else {
+      this.myForm.patchValue(this.data);
+    }
+  }
+
+  get ingredientsForms() {
+    return this.myForm.get('ingredients') as FormArray;
   }
 
   addIngredients() {
@@ -69,7 +91,10 @@ export class DialogComponent implements OnInit {
   }
 
   onClose() {
-    const value: any = {};
+    const value: any = {
+      ...this.myForm.value,
+    };
+
     const isValid = this.myForm.valid;
 
     if (!isValid) {
@@ -79,16 +104,15 @@ export class DialogComponent implements OnInit {
         text: 'Data not Completed',
       });
     } else {
-      value.recipe_name = this.myForm.get('recipe_name')?.value;
-      value.price = this.myForm.get('price')?.value;
-      value.image = this.myForm.get('image')?.value;
-      value.ingredients = this.myForm.get('ingredients')?.value;
-
       if (this.data) {
         value._id = this.data._id;
       }
 
       this.dialogRef.close(value);
     }
+  }
+
+  onCancel(){
+    this.dialogRef.close();
   }
 }

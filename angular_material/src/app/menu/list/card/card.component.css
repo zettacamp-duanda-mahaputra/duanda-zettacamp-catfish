@@ -11,14 +11,17 @@
 }
 
 .wrap-img{
-  width: 100%;
+  width: 350px;
   height: 300px;
   overflow: hidden;
   position: relative;
+  background-color: white;
 }
 
 img{
-  width: 100%;
+  width: 110%;
+  margin:0;
+  position: absolute;
 }
 
 .qty{

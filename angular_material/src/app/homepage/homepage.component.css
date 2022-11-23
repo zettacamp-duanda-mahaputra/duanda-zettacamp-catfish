@@ -24,7 +24,8 @@
   text-align: center;
   align-items: center;
   height: 700px;
-  
+  flex-direction: column;
+  gap: 20px;
 }
 
 
@@ -36,3 +37,9 @@ h2{
   font-family: 'Caveat', cursive;
   font-size: xx-large;
 }
+
+button{
+  background-color: black;
+  color: white;
+}
+

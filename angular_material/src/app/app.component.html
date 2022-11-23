@@ -6,19 +6,20 @@
     />
   </a>
   
-  <div class="wrap-left">
-    <button mat-button [routerLink]="['About']" routerLinkActive="active" *ngIf="!isToken">About</button>
-    <button mat-button [routerLink]="['Menu']" routerLinkActive="active" *ngIf="!isToken">Menu</button>
-  </div>
+  <div class="wrap-left"></div>
 
   <div class="wrap-right">
-    <button mat-button [routerLink]="['Login']" routerLinkActive="active" *ngIf="!isToken">Login</button>
-    <button mat-button [routerLink]="['Login']" *ngIf="!isToken">
+    <button mat-button [routerLink]="['About']" routerLinkActive="active">About</button>
+    <button mat-button [routerLink]="['Menu']" routerLinkActive="active" *ngIf="role == 'User'|| 'Admin'">Menu</button>
+    <button mat-button [routerLink]="['MenuManagement']" routerLinkActive="active" *ngIf="role == 'Admin' && isLogin">Menu Management</button>
+    <button mat-button [routerLink]="['StockManagement']" routerLinkActive="active" *ngIf="role == 'Admin' && isLogin">Stock Management</button>
+    <button mat-button [routerLink]="['Login']" routerLinkActive="active" *ngIf="!isLogin">Login</button>
+    <button mat-button [routerLink]="['Cart']" *ngIf="role == 'User' || 'Admin' && isLogin">
       <mat-icon>add_shopping_cart</mat-icon>
     </button>
   </div>
   <button mat-button *ngFor="let menu of menus" [routerLink]="[menu?.routing]">{{ menu?.page }}</button>
-  <button mat-button [routerLink]="['Homepage']"  *ngIf="isToken">Logout</button>
+  <button mat-button *ngIf="isLogin" (click)="isLogout()">Logout</button>
 </mat-toolbar>
 
 <div>

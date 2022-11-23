@@ -1,15 +1,19 @@
 
-  <div class="form" [formGroup]="myForm">
-    <mat-form-field appearance="legacy">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" />
-    </mat-form-field>
-    <mat-form-field appearance="legacy">
-      <mat-label>Password</mat-label>
-      <input matInput formControlName="password" />
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onSubmit()">
-      submit
-    </button>
+  <div class="wrapper" >
+    <div class="card img"></div>
+    <div class="form card" [formGroup]="myForm">
+      <mat-form-field class="head" appearance="legacy">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        submit
+      </button>
+    </div>
   </div>
+  
 

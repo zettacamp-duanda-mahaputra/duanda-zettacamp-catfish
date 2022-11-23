@@ -53,4 +53,8 @@ export class FormComponent implements OnInit {
 
   
   }
+
+  onCancel(){
+    this.dialogRef.close();
+  }
 }

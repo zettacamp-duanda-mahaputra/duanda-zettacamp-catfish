@@ -12,7 +12,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuService.get().subscribe((data:any)=>{
-      console.log(data);
       this.menus = data.data.getAllRecipes.data
     })
   }
