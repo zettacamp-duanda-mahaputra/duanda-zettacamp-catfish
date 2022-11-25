@@ -31,19 +31,6 @@ export class CardComponent implements OnInit {
       height:'700px'
     })
     console.log(data._id);
-    
-
-    // dialogRef.afterClosed().subscribe((result) => {
-    //      this.cartService.add(result)
-    //       .subscribe(() => {
-    //         Swal.fire({
-    //           icon: 'success',
-    //           title: 'Success',
-    //           text: 'Data Completed',
-    //         })
-    //       });
-      
-    // })
   }
 
  

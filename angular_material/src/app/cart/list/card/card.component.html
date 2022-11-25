@@ -11,7 +11,9 @@
     <div [formGroup]="myForm">
       <mat-form-field class="qty">
         <mat-label>Amount</mat-label>
-        <input type="number" matInput formControlName="amount" />
+        <input type="number" min="1" matInput formControlName="amount" />
+        <mat-error *ngIf="myForm.get('amount')?.errors?.['max']">Amount more than Available</mat-error>
+      
       </mat-form-field>
       <mat-form-field>
         <mat-label>Note</mat-label>

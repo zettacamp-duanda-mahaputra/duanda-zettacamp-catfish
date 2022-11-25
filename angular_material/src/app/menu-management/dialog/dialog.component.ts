@@ -11,6 +11,7 @@ import { StockManagementService } from 'src/app/stock-management/stock-managemen
   styleUrls: ['./dialog.component.css'],
 })
 export class DialogComponent implements OnInit {
+  
   myForm = new FormGroup({
     recipe_name: new FormControl(null, Validators.required),
     price: new FormControl(null, [Validators.required,Validators.min(1)]),
@@ -27,17 +28,13 @@ export class DialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if(this.data.length){
-      this.addIngredients();
-    }
+
     
     this.stockManagementService.getAllIngredients().subscribe((result) => {
-      this.stockIngredient = result;
+      this.stockIngredient = result.data;
     });
 
-    if (this.data) {
-      console.log(this.data);
-      
+    if (this.data) {      
       const data: any = {};
 
       for (let item of Object.entries(this.data)) {
@@ -66,7 +63,7 @@ export class DialogComponent implements OnInit {
           });
         }
       }
-      console.log(this.data);
+      console.log(data);
 
       this.myForm.patchValue(data);
     } else {
@@ -80,8 +77,8 @@ export class DialogComponent implements OnInit {
 
   addIngredients() {
     const group = new FormGroup({
-      ingredient_id: new FormControl(null),
-      stock_used: new FormControl(null),
+      ingredient_id: new FormControl(null, Validators.required),
+      stock_used: new FormControl(null, Validators.required),
     });
     this.ingredientsForms.push(group);
   }

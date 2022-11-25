@@ -11,6 +11,12 @@ export class ListComponent implements OnInit {
   constructor(private menuService:MenuService) { }
 
   ngOnInit(): void {
+    this.getAll()
+    console.log('alala');
+    
+  }
+
+  getAll(){
     this.menuService.get().subscribe((data:any)=>{
       this.menus = data.data.getAllRecipes.data
     })

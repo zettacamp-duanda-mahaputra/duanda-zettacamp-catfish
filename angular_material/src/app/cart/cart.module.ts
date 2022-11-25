@@ -6,6 +6,7 @@ import { CardComponent } from './list/card/card.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations: [
     CartComponent,
     ListComponent,
-    CardComponent
+    CardComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ const routes: Routes = [
   exports: [
     CartComponent,
     ListComponent,
-    CardComponent
+    CardComponent,
+    DialogComponent
   ]
 })
 export class CartModule { }

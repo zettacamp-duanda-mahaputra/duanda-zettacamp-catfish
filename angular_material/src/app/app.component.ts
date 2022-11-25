@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,19 +13,19 @@ export class AppComponent implements OnInit {
   menus: any = [];
   isLogin: any
   role: any;
+  
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService:AuthService) {}
 
   ngOnInit() {
-    this.isLogin = localStorage.getItem('userToken');
-    this.role = localStorage.getItem('userRole');
-  
+    this.role = this.authService.getRole()
+    this.isLogin = this.authService.getToken()
+    console.log(this.isLogin);
+    
   }
 
   isLogout() {
-    localStorage.removeItem('userToken');
-    localStorage.removeItem('userData');
-    localStorage.removeItem('userId');
+   this.authService.clearUser()
     this.router.navigate(['Homepage']).then(() => {
       window.location.reload();
     });

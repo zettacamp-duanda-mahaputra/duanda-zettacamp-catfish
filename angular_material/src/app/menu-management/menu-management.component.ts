@@ -27,7 +27,7 @@ export class MenuManagementComponent implements OnInit {
   filteredValues: any = { status: '' };
   availableSources: Dropdown[] = Drop;
 
-  pageSize:number = 3
+  pageSize:number = 6
   pageIndex:number = 0
   itemLength:any
   pageEvent:any

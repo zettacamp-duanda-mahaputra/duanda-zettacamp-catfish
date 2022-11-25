@@ -8,8 +8,7 @@ export class LoginService {
   constructor(private apollo: Apollo) {}
 
   getToken(myForm: any) {
-    const email = myForm.email;
-    const password = myForm.password;
+
     return this.apollo.mutate({
       mutation: gql`
         mutation LoginUser($email: String, $password: String) {
@@ -26,7 +25,7 @@ export class LoginService {
           }
         }
       `,
-      variables: { email, password },
+      variables: myForm,
     });
   }
 }

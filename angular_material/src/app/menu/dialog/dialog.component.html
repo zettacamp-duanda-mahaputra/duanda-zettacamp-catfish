@@ -10,7 +10,7 @@
 <div [formGroup]="myForm">
   <mat-form-field class="qty" >
     <mat-label>Amount</mat-label>
-    <input type="number" matInput formControlName="amount" />
+    <input type="number" min="1" matInput formControlName="amount" />
     <mat-error *ngIf="myForm.get('amount')?.errors?.['max']">Out of Stock</mat-error>
   </mat-form-field>
   <br>

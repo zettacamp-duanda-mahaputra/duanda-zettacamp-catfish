@@ -21,6 +21,11 @@ export class StockManagementComponent implements OnInit {
   filteredValues: any = { status: '' };
   availableSources: Dropdown[] = Drop;
 
+  pageSize:number = 10
+  pageIndex:number = 0
+  itemLength:any
+  pageEvent:any
+
   constructor(
     private stockManagementService: StockManagementService,
     public dialog: MatDialog
@@ -51,9 +56,15 @@ export class StockManagementComponent implements OnInit {
   }
 
   getAll() {
-    this.stockManagementService.getAllIngredients().subscribe((data: any) => {
-      this.dataSource.data = data;
-      console.log(data);
+    const pagination = {
+      limit: this.pageSize ? this.pageSize : 5, 
+      page: this.pageIndex ? this.pageIndex : 0
+    }
+    this.stockManagementService.getAllIngredients(pagination).subscribe((data: any) => {
+      this.dataSource.data = data.data;
+
+      this.itemLength = data.paginator.total_items
+
     });
   }
 
@@ -93,5 +104,14 @@ export class StockManagementComponent implements OnInit {
     this.stockManagementService.deleteIngredient(id).subscribe(() => {
       this.getAll();
     });
+  }
+
+  indexingPage(data:any){
+    console.log(data);
+    this.pageIndex = data.pageIndex
+    this.pageSize = data.pageSize
+    
+    this.getAll()
+    
   }
 }

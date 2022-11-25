@@ -26,6 +26,7 @@ export class FormComponent implements OnInit {
 
     if (this.data) {
       this.myForm.patchValue(this.data);
+      this.myForm.controls['name'].disable();
     }
   }
 

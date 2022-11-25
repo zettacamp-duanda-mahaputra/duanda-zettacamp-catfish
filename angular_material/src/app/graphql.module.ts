@@ -1,19 +1,33 @@
 import { NgModule } from '@angular/core';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
-import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
+import { ApolloClientOptions, ApolloLink, InMemoryCache } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
 import { HttpHeaders } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
-const uri = 'https://2ebc-115-178-227-199.ap.ngrok.io/graphql';
-const token = localStorage.getItem('userToken');
-const id = localStorage.getItem('userId')
+const uri = 'https://a211-114-79-32-135.ap.ngrok.io/graphql';
+
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+
+  const http = httpLink.create({ uri });
+
+  const middleware = new ApolloLink((operation, forward) => {
+    const authService = new AuthService();
+    const token = authService.getToken();
+    const id = authService.getUserId();
+
+    operation.setContext({
+      headers: new HttpHeaders().set('Authorization', `${token || null}`).set('userid', id ? id : '')
+    });
+
+    return forward(operation)
+  });
+
+  const link = middleware.concat(http);
+
+
   return {
-    link: httpLink.create({
-      uri,
-      headers: new HttpHeaders().set('Authorization', token ? token : '').set('userid', id ? id : '')
-    }),
-    cache: new InMemoryCache(),
+    link, cache: new InMemoryCache(),
   };
 }
 
@@ -27,4 +41,4 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     },
   ],
 })
-export class GraphQLModule {}
+export class GraphQLModule { }

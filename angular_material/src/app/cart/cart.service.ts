@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
+import { map } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo) { }
 
   get() {
     return this.apollo.query({
@@ -24,6 +25,7 @@ export class CartService {
                 recipe_name
                 price
                 image
+                available
               }
             }
           }
@@ -97,4 +99,31 @@ export class CartService {
       variables: { id, amount, note },
     });
   }
+
+  history() {
+    return this.apollo.query({
+      query: gql`
+      query getUserTransactionHistory{
+        getUserTransactionHistory{
+          data {
+            menu {
+              amount
+              note
+              recipe_id {
+                recipe_name
+                price
+              }
+              status_recipe
+            }
+            total_price
+            order_date
+            order_status
+          }
+        }
+      }`, fetchPolicy:'network-only'
+    }).pipe(map((result:any)=>{
+      return result.data.getUserTransactionHistory.data
+    }))
+  }
 }
+

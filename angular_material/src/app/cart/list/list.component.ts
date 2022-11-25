@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-list',
@@ -11,7 +14,7 @@ import { Router } from '@angular/router';
 export class ListComponent implements OnInit {
   carts: any = [];
 
-  constructor(private cartService: CartService, private router:Router) {}
+  constructor(private cartService: CartService, private router:Router, private dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.getAll();
@@ -25,6 +28,7 @@ export class ListComponent implements OnInit {
 
     })
   }
+
 
   onCheckOut() {
 
@@ -51,9 +55,16 @@ export class ListComponent implements OnInit {
             title: 'Success',
             text: 'Checkout Completed',
           }).then(() => {
-            this.router.navigate(['Menu'])
+            this.getAll()
           });
         }
       });
+  }
+
+  openDialog(data:any){
+    const dialogRef = this.dialog.open(DialogComponent,{
+      data: data,
+      width:'500px'
+    })
   }
 }
