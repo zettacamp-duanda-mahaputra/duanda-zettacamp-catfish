@@ -3,6 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from "../../environments/environment";
+import { initializeApp } from "firebase/app";
+initializeApp(environment.firebase);
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 
 const routes: Routes = [
@@ -17,7 +26,15 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    TranslateModule.forChild({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   exports: [
     HomepageComponent
