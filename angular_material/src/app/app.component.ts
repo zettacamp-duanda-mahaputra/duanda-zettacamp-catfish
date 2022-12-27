@@ -11,21 +11,19 @@ import { AuthService } from './auth.service';
 export class AppComponent implements OnInit {
   title = 'angular_material';
   menus: any = [];
-  isLogin: any
+  isLogin: any;
   role: any;
-  
 
-  constructor(private router: Router, private authService:AuthService) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    this.role = this.authService.getRole()
-    this.isLogin = this.authService.getToken()
+    this.role = this.authService.getRole();
+    this.isLogin = this.authService.getToken();
     console.log(this.isLogin);
-    
   }
 
   isLogout() {
-   this.authService.clearUser()
+    this.authService.clearUser();
     this.router.navigate(['Homepage']).then(() => {
       window.location.reload();
     });
